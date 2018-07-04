@@ -24,14 +24,24 @@
     \item In other words, AISync refers to the situation wherein identically 
     coupled oscillators synchronize stably only when the oscillator themselves 
     are non-identical.
-    \item How to demonstrate synchronization in coupled oscillators? \\
-     {\it Generalized master stability analysis}\\
-     technical points -
-     \begin{enumerate}[label=(\alph*)]
-     \item time delay in coupling
-     \item finding the finest simultaneous block diagonalization.
-    \end{enumerate}
 \end{itemize}
+
+\noindent \textbf{Conditions for AISyc}
+	\begin{enumerate}[label=(\Alph*)]
+		\item No asymptotically stable synchronization for homogeneous oscillators. 
+		
+		\item There is a heterogeneous configuration which results in stable asymptotically stable synchronization. 
+	\end{enumerate}
+
+\noindent \textbf{Some technical points}\\
+{\it may not be necessary for the preliminary studies}\\
+{\it Generalized master stability analysis}
+
+\begin{enumerate}[label=(\alph*)]
+	\item time delay in coupling (not necessary for AISync)
+	\item finding the finest simultaneous block diagonalization.
+\end{enumerate}
+
 
 \section*{FitzHugh Nagumo (FTH) oscillator}
 \begin{itemize}
@@ -54,5 +64,16 @@
     \item Two delays may generate extreme events. What does it translates to 
     if AISync is present?
 \end{itemize}
+
+\section*{Next steps}
+\begin{enumerate}
+	\item Choose a version of the FTH oscillator to work with including parameter values. 
+	\item The basic idea is that ``all kinds of " oscillators under consideration should admit a common orbit. Here, we will take just two kinds of oscillators -- this means that consider oscillators with two different sets of parameters. 
+	\item Choose a simple symmetric network.
+	\item What kind of coupling are we going to use? Possibilities are -- diffusive coupling, adjacency matrix coupling, and time-delay coupling  
+	\item Challenge - Generalized master stability analysis using the finest simultaneous block diagonalization.
+	\item The previous step will give maximal transverse Lyapunov exponent. Synchronization happens if this exponent is negative. 
+
+\end{enumerate}
 
 \end{document}
