@@ -1,8 +1,36 @@
-\documentclass[12pt,a4paper,final]{article}
-\usepackage[latin1]{inputenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=12pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment 
+%this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\font\myfont=cmr12 at 14pt
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, 
+%the default font and small caps
+\date{}
 \usepackage{graphicx}
 \usepackage{enumitem}
 \date{}
@@ -38,7 +66,7 @@
 {\it Generalized master stability analysis}
 
 \begin{enumerate}[label=(\alph*)]
-	\item time delay in coupling (not necessary for AISync)
+	\item time delay in coupling (could be the key ingredient for AISync)
 	\item finding the finest simultaneous block diagonalization.
 \end{enumerate}
 
@@ -76,4 +104,33 @@
 
 \end{enumerate}
 
+\section{Introduction}
+FitzHugh Nagumo Oscillator:
+\begin{align}
+\frac{du}{dt} &= - w - u(u-1)(u-\lambda) \nonumber \\
+\frac{dw}{dt} &= \epsilon(u-\delta w)
+\end{align}
+
+Properties:
+\begin{itemize}
+    \item Limit cycle exists for $\epsilon\delta + \lambda\leq0$.
+    \item Stable limit cycle for $\epsilon > 0$ and $\delta < 
+    \frac{\lambda}{\epsilon}$
+    \item Hopf bifurcation occurs when $\epsilon\delta + \lambda = 0$
+\end{itemize}
+\section{Procedure}
+\begin{itemize}
+    \item We can introduce an asymmetry parameter $h$ such that $\delta 
+    \rightarrow \delta - \frac{h}{\epsilon}$ and $\lambda \rightarrow 
+    \lambda + h$.
+    \item Therefore, we consider two kinds of FHN oscillator with parameters 
+    $(\delta,\epsilon, \lambda)$ and $(\delta', \epsilon, \lambda')$ with 
+    asymmetry parameter $h$ such that   \begin{align*}
+    \delta' &= \delta - \frac{h}{\epsilon} \\
+    \lambda'  &=\lambda + h
+    \end{align*}
+    \item But we have to be careful about the choice of parameters so that 
+    conditions for stable limit cycle is met.
+    \item 
+\end{itemize}
 \end{document}
