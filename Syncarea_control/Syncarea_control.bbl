@@ -1,0 +1,164 @@
+\begin{thebibliography}{10}
+
+\bibitem{Klafter1994}
+J.~Klafter and G.~Zumofen.
+\newblock L\'evy statistics in a hamiltonian system.
+\newblock {\em Phys. Rev. E}, 49:4873--4877, Jun 1994.
+
+\bibitem{Zaburdaev2015}
+V.~Zaburdaev, S.~Denisov, and J.~Klafter.
+\newblock L\'evy walks.
+\newblock {\em Rev. Mod. Phys.}, 87:483--530, Jun 2015.
+
+\bibitem{Zaslavsky2002a}
+G.M. Zaslavsky.
+\newblock Chaos, fractional kinetics, and anomalous transport.
+\newblock {\em Physics Reports}, 371(6):461 -- 580, 2002.
+
+\bibitem{Zaslavsky2002b}
+G.M. Zaslavsky.
+\newblock Dynamical traps.
+\newblock {\em Physica D: Nonlinear Phenomena}, 168–169:292 -- 304, 2002.
+\newblock \{VII\} Latin American Workshop on Nonlinear Phenomena.
+
+\bibitem{Mackay1984}
+R.S. Mackay, J.D. Meiss, and I.C. Percival.
+\newblock Transport in hamiltonian systems.
+\newblock {\em Physica D: Nonlinear Phenomena}, 13(1):55 -- 81, 1984.
+
+\bibitem{Easton1993}
+R.~W. Easton, J.~D. Meiss, and S.~Carver.
+\newblock Exit times and transport for symplectic twist maps.
+\newblock {\em Chaos}, 3(2), 1993.
+
+\bibitem{Meiss2015}
+J.~D. Meiss.
+\newblock Thirty years of turnstiles and transport.
+\newblock {\em Chaos}, 25(9), 2015.
+
+\bibitem{Altmann2006}
+Eduardo~G. Altmann, Adilson~E. Motter, and Holger Kantz.
+\newblock Stickiness in hamiltonian systems: From sharply divided to
+  hierarchical phase space.
+\newblock {\em Phys. Rev. E}, 73:026207, Feb 2006.
+
+\bibitem{Altmann2010}
+Eduardo~G. Altmann and Antonio Endler.
+\newblock Noise-enhanced trapping in chaotic scattering.
+\newblock {\em Phys. Rev. Lett.}, 105:244102, Dec 2010.
+
+\bibitem{Livorati2012}
+Andr\'e L.~P. Livorati, Tiago Kroetz, Carl~P. Dettmann, Iber\^e~Luiz Caldas,
+  and Edson~D. Leonel.
+\newblock Stickiness in a bouncer model: A slowing mechanism for fermi
+  acceleration.
+\newblock {\em Phys. Rev. E}, 86:036203, Sep 2012.
+
+\bibitem{Bunimovich2012}
+Leonid~A. Bunimovich and Luz~V. Vela-Arevalo.
+\newblock Many faces of stickiness in hamiltonian systems.
+\newblock {\em Chaos}, 22(2), 2012.
+
+\bibitem{Kruger2015}
+Taline~Suellen Kr\"uger, Paulo~Paneque Galuzio, Thiago de~Lima Prado,
+  Ricardo~Luiz Viana, Jos\'e~Danilo Szezech, and Sergio~Roberto Lopes.
+\newblock Mechanism for stickiness suppression during extreme events in
+  hamiltonian systems.
+\newblock {\em Phys. Rev. E}, 91:062903, Jun 2015.
+
+\bibitem{Babiano1994}
+A.~Babiano, G.~Boffetta, A.~Provenzale, and A.~Vulpiani.
+\newblock Chaotic advection in point vortex models and two‐dimensional
+  turbulence.
+\newblock {\em Physics of Fluids}, 6(7), 1994.
+
+\bibitem{Tel2005}
+Tamás Tél, Alessandro de~Moura, Celso Grebogi, and György Károlyi.
+\newblock Chemical and biological activity in open flows: A dynamical system
+  approach.
+\newblock {\em Physics Reports}, 413(2–3):91 -- 196, 2005.
+
+\bibitem{Szezech2012}
+J.~D. Szezech, I.~L. Caldas, S.~R. Lopes, P.~J. Morrison, and R.~L. Viana.
+\newblock Effective transport barriers in nontwist systems.
+\newblock {\em Phys. Rev. E}, 86:036206, Sep 2012.
+
+\bibitem{Martins2014}
+Caroline G.~L. Martins, M.~Roberto, and I.~L. Caldas.
+\newblock Delineating the magnetic field line escape pattern and stickiness in
+  a poloidally diverted tokamak.
+\newblock {\em Physics of Plasmas}, 21(8), 2014.
+
+\bibitem{Efthymiopoulos1999}
+C.~Efthymiopoulos, G.~Contopoulos, and N.~Voglis.
+\newblock Cantori, islands and asymptotic curves in the stickiness region.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 73(1):221--230,
+  1999.
+
+\bibitem{Harsoula2010}
+M.~Harsoula, C.~Kalapotharakos, and G.~Contopoulos.
+\newblock Asymptotic orbits in barred spiral galaxies.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  411(2):1111--1126, 2011.
+
+\bibitem{Harsoula2016}
+M.~Harsoula, C.~Efthymiopoulos, and G.~Contopoulos.
+\newblock Analytical forms of chaotic spiral arms.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  459(4):3419--3431, 2016.
+
+\bibitem{Mahata2016}
+Sasibhusan Mahata, Swetamber Das, and Neelima Gupte.
+\newblock Synchronization in area-preserving maps: Effects of mixed phase space
+  and coherent structures.
+\newblock {\em Phys. Rev. E}, 93:062212, Jun 2016.
+
+\bibitem{Szezech2005}
+J.D.~Szezech Jr., S.R. Lopes, and R.L. Viana.
+\newblock Finite-time lyapunov spectrum for chaotic orbits of non-integrable
+  hamiltonian systems.
+\newblock {\em Physics Letters A}, 335(5–6):394 -- 401, 2005.
+
+\bibitem{Grabow2011}
+C.~Grabow, S.~Grosskinsky, and M.~Timme.
+\newblock Speed of complex network synchronization.
+\newblock {\em The European Physical Journal B}, 84(4):613--626, 2011.
+
+\bibitem{Wang2016}
+Sheng-Jun Wang, Ru-Hai Du, Tao Jin, Xing-Sen Wu, and Shi-Xian. Qu.
+\newblock Synchronous slowing down in coupled logistic maps via random network
+  topology.
+\newblock {\em Scientific Reports}, 6:1--13, Mar 2016.
+
+\bibitem{Thorpe1996}
+Simon Thorpe, Denis Fize, and Catherine Marlot.
+\newblock Speed of processing in the human visual system.
+\newblock {\em Nature}, 381:520--522, Jun 1996.
+
+\bibitem{Uchida2003}
+Naoshige Uchida and Zachary~F. Mainen.
+\newblock Speed and accuracy of olfactory discrimination in the rat.
+\newblock {\em Nature Neuroscience}, 6:1224--1229, Oct 2003.
+\newblock Article.
+
+\bibitem{Pecora1990}
+Louis~M. Pecora and Thomas~L. Carroll.
+\newblock Synchronization in chaotic systems.
+\newblock {\em Phys. Rev. Lett.}, 64:821--824, Feb 1990.
+
+\bibitem{Pecora2015}
+Louis~M. Pecora and Thomas~L. Carroll.
+\newblock Synchronization of chaotic systems.
+\newblock {\em Chaos}, 25(9), 2015.
+
+\bibitem{Pecora1998}
+Louis~M. Pecora and Thomas~L. Carroll.
+\newblock Master stability functions for synchronized coupled systems.
+\newblock {\em Phys. Rev. Lett.}, 80:2109--2112, Mar 1998.
+
+\bibitem{Benkadda1997}
+S.~Benkadda, S.~Kassibrakis, R.~B. White, and G.~M. Zaslavsky.
+\newblock Self-similarity and transport in the standard map.
+\newblock {\em Phys. Rev. E}, 55:4909--4917, May 1997.
+
+\end{thebibliography}

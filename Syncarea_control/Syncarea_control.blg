@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Syncarea_control.aux
+The style file: unsrt.bst
+Database file #1: Syncarea_controlNotes.bib
+Database file #2: Syncref.bib
+You're missing a field part---line 102 of file Syncref.bib
+ :    eid = 
+ :          ,
+I'm skipping whatever remains of this entry
+You're missing a field part---line 296 of file Syncref.bib
+ :    eid = 
+ :          ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "FN1"
+You've used 29 entries,
+            1791 wiz_defined-function locations,
+            656 strings with 8015 characters,
+and the built_in function-call counts, 6710 in all, are:
+= -- 587
+> -- 313
+< -- 0
++ -- 115
+- -- 86
+* -- 545
+:= -- 1112
+add.period$ -- 89
+call.type$ -- 29
+change.case$ -- 29
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 255
+empty$ -- 638
+format.name$ -- 86
+if$ -- 1448
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 29
+newline$ -- 150
+num.names$ -- 29
+pop$ -- 27
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 99
+stack$ -- 0
+substring$ -- 541
+swap$ -- 29
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 59
+width$ -- 31
+write$ -- 325
+(There were 2 error messages)
