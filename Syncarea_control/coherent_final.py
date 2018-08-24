@@ -15,7 +15,8 @@ def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6
         P1[0] = P1_incod[j]
         Q1[0] = Q1_incod[j]
         Q2[0] = Q2_incod[j]
-        for i in range(N-1):
+        print("j =",j)
+	for i in range(N-1):
             if abs(P1[i]) < delta and abs(Q1[i]) < delta:
                 K1 = K - eps
             else:
@@ -63,12 +64,12 @@ def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6
                 if test.max() < 10**-5:
                     t = i
                     sync_time.append(t)
-                    print("sync time = ", i)
+                    #print("sync time = ", i)
 
                     break
         if t == 0:
             sync_time.append(t)
-            print("sync time = ", t)
+            #print("sync time = ", t)
 
     # plt.plot(Q_d,P_d,'.b')
     # plt.xlim(0,1)
@@ -84,7 +85,7 @@ def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6
 
 def sync_code(save_data = False):
     N = 10 ** 7
-    n_incod = 10
+    n_incod = 100
     del_Q = np.zeros(N)
     P1_incod = np.random.uniform(-0.4, 0.4, n_incod)
     Q1_incod = np.random.uniform(0.3, 0.7, n_incod)
@@ -97,11 +98,11 @@ def sync_code(save_data = False):
     print(sync_time_with_control)
     if save_data:
         data = dict(without_control=np.array(sync_time_without_control), with_control=np.array(sync_time_with_control))
-        fname = "sync_times_in_cod_50000.hf"
+        fname = "sync_times_in_cod_5000.hf"
         CPG.hdf.save_h5_dict(fname, data)
 
 def do_plots():
-    fname = "sync_times.hf"
+    fname = "sync_times_in_cod_5000.hf"
     data = CPG.hdf.load_h5_dict(fname)
 
     time_c = data["with_control"]
@@ -114,8 +115,8 @@ def do_plots():
 
 if __name__ == "__main__":
     #coherent_std_map(eps = 1.5, delta = 0.4, K = 6)
-    sync_code()
+    sync_code(save_data = "True")
     #test()
-    # do_plots()
+    #do_plots()
 
 
