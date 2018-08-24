@@ -5,8 +5,10 @@ from CPG.hdf import HDFClassIO
 import CPG
 import math
 
+
 def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6.0, N = 10, n_incod = 10):
     sync_time = []
+
     for j in range(n_incod):
         P1 = np.zeros(N)
         P2 = np.zeros(N)
@@ -15,8 +17,8 @@ def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6
         P1[0] = P1_incod[j]
         Q1[0] = Q1_incod[j]
         Q2[0] = Q2_incod[j]
-        print("j =",j)
-	for i in range(N-1):
+        #print("j =",j)
+        for i in range(N-1):
             if abs(P1[i]) < delta and abs(Q1[i]) < delta:
                 K1 = K - eps
             else:
@@ -85,7 +87,7 @@ def coherent_std_map(P1_incod, Q1_incod, Q2_incod, eps = 0.0, delta = 0.1, K = 6
 
 def sync_code(save_data = False):
     N = 10 ** 7
-    n_incod = 100
+    n_incod = 5000
     del_Q = np.zeros(N)
     P1_incod = np.random.uniform(-0.4, 0.4, n_incod)
     Q1_incod = np.random.uniform(0.3, 0.7, n_incod)
@@ -94,8 +96,8 @@ def sync_code(save_data = False):
     sync_time_without_control = coherent_std_map(N = N, n_incod = n_incod, eps = 0.0, delta = 0.0, K = 6, P1_incod = P1_incod, Q1_incod = Q1_incod, Q2_incod = Q2_incod)
     sync_time_with_control = coherent_std_map(N = N, n_incod = n_incod, eps = 1.5, delta = 0.4, K = 6, P1_incod = P1_incod, Q1_incod = Q1_incod, Q2_incod = Q2_incod)
 
-    print(sync_time_without_control)
-    print(sync_time_with_control)
+    #print(sync_time_without_control)
+    #print(sync_time_with_control)
     if save_data:
         data = dict(without_control=np.array(sync_time_without_control), with_control=np.array(sync_time_with_control))
         fname = "sync_times_in_cod_5000.hf"
@@ -115,7 +117,7 @@ def do_plots():
 
 if __name__ == "__main__":
     #coherent_std_map(eps = 1.5, delta = 0.4, K = 6)
-    sync_code(save_data = "True")
+    sync_code(save_data = True)
     #test()
     #do_plots()
 
