@@ -117,8 +117,8 @@ def do_plots():
 
 if __name__ == "__main__":
     #coherent_std_map(eps = 1.5, delta = 0.4, K = 6)
-    sync_code(save_data = True)
+    #sync_code(save_data = True)
     #test()
-    #do_plots()
+    do_plots()
 
 
