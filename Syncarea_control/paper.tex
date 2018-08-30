@@ -76,12 +76,12 @@
 show identical synchronization in the sticky neighborhood of the regular 
 islands. We use this fact to devise a couple of numerical procedures to 
 delay and expedite the process of synchronization in standard maps coupled 
-under  Pecora-Caroll scheme. The delay method is based on controlled 
-kicking of trajectories away from the regular islands for as long as 
+under  Pecora-Caroll coupling scheme. The delay method is based on controlled 
+kicking of trajectories away from synchronization traps for as long as 
 necessary. On the other hand, the method to expiate the process is
 achieved by a parameter perturbation technique which rapidly drives the 
 chaotic trajectories to synchronization traps in the sticky neighborhoods 
-of regular islands. We also point out of limitations of these methods.  
+of regular islands. We also point out of the limitations of these methods.
 \end{abstract}
 
 \pacs{PACS here}
@@ -89,32 +89,77 @@ of regular islands. We also point out of limitations of these methods.
 \maketitle
 
 \section{Introduction} 
-Low-dimensional Hamiltonian systems commonly exhibit mixed phase space i.e. regular structures and chaotic regions may co-exist at a given degree of nonlinearity. This mixed nature has interesting consequences for the transport properties of such systems, for instance, the existence of anomalous kinetics, L\'{e}vy processes and L\'{e}vy flights \cite{Klafter1994,Zaburdaev2015}, power law contributions to recurrence and other statistics, and the existence of dynamical traps \cite{Zaslavsky2002a,Zaslavsky2002b}. An interesting region of a mixed phase space is the interface between regular regions and chaotic sea \cite{Mackay1984, Easton1993}. The dynamics in these neighbourhoods are complex and not well understood \cite{Meiss2015}. The complexity arises from the fact that a chaotic trajectory spends an arbitrary long but finite time at the boundaries of regular islands before exiting to the chaotic sea. The intermittent tendency of chaotic trajectories to stay close to the regular boundaries is called the phenomenon of stickiness. A major consequence of the stickiness is  the existence of power law in the Poincar{\'e} recurrence times indicating algebraic decay for long times times rather than exponential decay expected for normal transport. Therefore, due to stickiness, even a small regular island can influence the global transport properties of the system and decay of correlations. The phenomenon has been of great interest and continues to be studied on theoretical level \cite{Altmann2006, Altmann2010,Livorati2012,Bunimovich2012, Kruger2015}. In addition, stickiness has found application in several problems such as particle advection in fluids \cite{Babiano1994,Tel2005}, transport in plasma fusion devices \cite{Szezech2012,Martins2014}, celestial mechanics \cite{Efthymiopoulos1999, Harsoula2010, Harsoula2016}.
+Low-dimensional Hamiltonian systems commonly exhibit mixed phase space i.e. 
+regular structures and chaotic regions may co-exist at a given degree of 
+nonlinearity. This mixed nature has interesting consequences for the transport
+properties of such systems, for instance, the existence of anomalous kinetics,
+L\'{e}vy processes and L\'{e}vy flights \cite{Klafter1994,Zaburdaev2015}, 
+power law contributions to recurrence and other statistics, and the existence 
+of dynamical traps \cite{Zaslavsky2002a,Zaslavsky2002b}. An interesting region 
+of a mixed phase space is the interface between regular regions and chaotic 
+sea \cite{Mackay1984, Easton1993}. The dynamics in these neighbourhoods are 
+complex but fairly well understood \cite{Meiss2015} for lower dimensional 
+systems. The complexity arises from the fact that a chaotic trajectory spends 
+an arbitrary long but finite time at the boundaries of regular islands before 
+exiting to the chaotic sea. The intermittent tendency of chaotic trajectories 
+to stay close to the regular boundaries is called the phenomenon of 
+stickiness. A major consequence of the stickiness is  the existence of power 
+law in the Poincar{\'e} recurrence times indicating algebraic decay for long 
+times times rather than exponential decay expected for normal transport. 
+Therefore, due to stickiness, even a small regular island can influence the 
+global transport properties of the system and decay of correlations. The 
+phenomenon has been of great interest and continues to be studied on 
+theoretical level \cite{Altmann2006, Altmann2010,Livorati2012,Bunimovich2012, 
+Kruger2015}. In addition, stickiness has found application in several problems 
+such as particle advection in fluids \cite{Babiano1994,Tel2005}, transport in 
+plasma fusion devices \cite{Szezech2012,Martins2014}, celestial mechanics 
+\cite{Efthymiopoulos1999, Harsoula2010, Harsoula2016}.
 
-A recent feature of stickiness has emerged from a connected quarter. In our recent work~\cite{Mahata2016}, we have looked at the effects of the mixed phase space on the synchronization in a system of two standard maps coupled in unidirectional drive-response configuration. We have shown that synchronization of chaotic trajectories of the drive and response maps typically occurs in the neighborhood of regular inlands as a consequence of stickiness in the region.  This is the first instance, as far as we are aware, where stickiness have been found to influence synchronization in coupled chaotic systems.  For a chaotic orbit, synchronization typically happens via an intermittent behavior in the phase difference of the drive and response maps.   The sticky neighbourhoods of a regular islands contain Dynamical traps in chaotic orbits. In such trapping regions in the phase space, parts of a chaotic trajectory are almost regular in time and allow for synchronization to occur. Such traps are characterized using the properties of the finite-time Lyapunov exponent \cite{Szezech2005}. In the context of our work, we will refer to these traps as synchronization traps. We further noted that the behavior of the synchronization traps can be analyzed in a more quantitative way by analyzing the location and stability properties of the periodic orbits in the vicinity of the locations where synchronization takes place. 
+A recent feature of stickiness has emerged from a connected quarter. In our 
+recent work~\cite{Mahata2016}, we have looked at the effects of the mixed 
+phase space on the synchronization in a system of two standard maps coupled in 
+unidirectional drive-response configuration. We have shown that 
+synchronization of chaotic trajectories of the drive and response maps 
+typically occurs in the neighborhood of regular inlands as a consequence of 
+stickiness in the region.  This is the first instance, as far as we are aware, 
+where stickiness have been found to influence synchronization in coupled 
+chaotic systems.  For a chaotic orbit, synchronization typically happens via 
+an intermittent behavior in the phase difference of the drive and response 
+maps.   The sticky neighborhoods of a regular islands contain dynamical traps 
+in chaotic orbits. In such trapping regions in the phase space, parts of a 
+chaotic trajectory are almost regular in time and allow for synchronization to 
+occur. Such traps are characterized using the properties of the finite-time 
+Lyapunov exponent \cite{Szezech2005}. In the context of our work, we will 
+refer to these traps as synchronization traps. We further noted that the 
+behavior of the synchronization traps can be analyzed in a more quantitative 
+way by analyzing the location and stability properties of the periodic orbits 
+in the vicinity of the locations where synchronization takes place.
 
 Synchronization in coupled chaotic systems, coupled map lattices and networks 
 have been studied in great details over the years. Coupled Hamiltonian systems are also known to show synchronization such as measure synchronization~\cite{Hampton1999,Wang2003,Vincent2005,Gupta2017} and identical synchronization~\cite{Mahata2016,Das2017} The fact however remains 
 that the ability to control synchronization based on the dynamics of the 
 process has not been given much attention, until 
 recently~\cite{Grabow2011,Wang2016}. In realistic systems, the speed of 
-processing of visual or  synchronization may be significant. For example, in 
+synchronization may be significant. For example, in
 neurosciences,  the speed of the visual and olfactory processing are 
 interesting problems \cite{Thorpe1996,Uchida2003}. In this paper, we intend 
 to develop a couple of 
 mechanisms to control synchronization process to wit,  to increase and to 
-decrease synchronization time based on the location of synchronization traps 
-in the sticky neightborhood of regular islands in the phase space of the 
+decrease synchronization times based on the location of synchronization traps 
+in the sticky neighborhood of regular islands in the phase space of the 
 area-preserving system of the standard map. We demonstrate the mechanism at $K 
-= 6$ where only two small regular islands exist. It is important to note that role of stickiness in Hamiltonian systmes for synchronaization was already predicted by Zaslavsky~\cite{Zaslavsky2002b} early in the last decade.\\
+= 6$ where only two small regular islands exist. It is important to point out 
+that the role of stickiness in Hamiltonian systems for synchronization was 
+already predicted by Zaslavsky~\cite{Zaslavsky2002b} early in the last decade.
 
 The rest of the paper is 
 organized in the following way: we explain the coupling scheme in 
-sec.~\ref{sec:Pecora_Carroll}, the mechanism and demonstration of delay and 
-advanced synchronization times in sec.~\ref{sec:delay} and 
-sec.~\ref{sec:advanced} respectively, and the paper ends with conclusions in 
-sec.~\ref{sec:conclusions} including discussion on limitations and 
-implications. 
+sec.~\ref{sec:Pecora_Carroll} and the mechanism based on the location of 
+synchronization traps is given in sec.~\ref{Master stability function}. The 
+numerical procedures to delay and advanced synchronization times are 
+demonstrated in sec.~\ref{sec:delay} and sec.~\ref{sec:advanced} respectively, 
+and the paper ends with conclusions in sec.~\ref{sec:conclusions} including 
+discussion on limitations and implications. 
 
 
 \section{The Pecora Caroll's unidirectional coupling scheme}
@@ -263,7 +308,25 @@ We plot the variation in the time-5 FTLE defined above at $K = 6$. At the point 
 
 \section{Delayed Synchronization Times}
 \label{sec:delay}
-In order to develop a numerical technique to delay synchronization, we  first have to identify the vicinity of regular islands in the phase space. Another mechanism  to suppress stickiness based on knowledge of hyperbolic and non hyperbolic regions in the phase has been reported recently~\cite{Kruger2015}. Our method, however, targets the trajectories themselves in the sticky region to delay the process. We employ the edge-detection algorithm due to Benkadda {\it et al.} \cite{Benkadda1997}. For the numerical procedure, we divide the phase space in $100 \times 100$ grid. The edges of both the islands are detected by applying the standard map to point initiated in the chaotic sea, for $10^7$ times.  The edges thus detected in shown in Fig.  We have chosen the thickness parameter to be $d = 0.02$ i.e. euclidean distance of $d$ from points on the edge indicate the extent of the vicinity of the island.  This vicinity, therefore, indicate the the domain wherein the synchronization traps exist.  To demonstrate this explicitly, we compare the phase angles, defined by $\theta = \tan^{-1}\frac{Q}{P}$, of the points on the numerically detected edges and the points of synchronization, as follows. 
+In order to develop a numerical technique to delay synchronization, we  first 
+have to identify the vicinity of regular islands in the phase space. A 
+mechanism  to suppress stickiness based on the knowledge of hyperbolic and non 
+hyperbolic regions in the phase has been reported recently~\cite{Kruger2015}. 
+Our method, however, targets the trajectories themselves in the sticky region 
+to delay the process.  It is to be noted that the proposed procedure ignores 
+the details of a rather complex hierarchy of structures around regular 
+islands. We employ the edge-detection algorithm due to Benkadda {\it et al.} 
+\cite{Benkadda1997} to identify the edges of regular islands. For the 
+numerical procedure, we divide the phase space in $100 \times 100$ grid. The 
+edges of both the islands are detected by applying the standard map to point 
+initiated in the chaotic sea, for $10^7$ times.  The edges thus detected in 
+shown in Fig.  We have chosen the thickness parameter to be $d =0.02$ i.e. 
+euclidean distance of $d$ from points on the edge indicate the extent of the 
+vicinity of the island.  This vicinity, therefore, indicate the domain wherein 
+the synchronization traps exist.  To demonstrate this explicitly, we compare 
+the phase angles, defined by $\theta = \tan^{-1}(\frac{Q}{P}$), of the points 
+on 
+the numerically detected edges and the points of synchronization, as follows.
 
 In Fig.~\ref{fig:Edge_Sync_angles}(a), we show the distribution of phase angles of the points on the edges of regular islands determined by the edge-detection algorithm.  The bimodality of the distribution is due to the existence of two sharp islands in otherwise chaotic bulk in the phase space.  We compare this with the phase angles corresponding to the points in the phase space at which synchronization of the chaotic trajectories occurs.
 
@@ -284,7 +347,7 @@ The proximity parameter $d_0 = 0.02$ defines the region in the neighbourhood of 
 \begin{figure}[h]
 	\includegraphics[scale=0.45]{S_U_Percent}
 	\caption{\label{fig:Control_success}\footnotesize The curves indicate the 
-		percentages of (S) successful delays shown as the blue curve,a and (U) 
+		percentages of (S) successful delays shown as the blue curve, and (U) 
 		undesirable fast synchronization shown as the red curve. }
 \end{figure}
 
@@ -293,23 +356,41 @@ For the numerical implementation of the mechanism, we have considered $1000$ ran
 \begin{figure}[t]
 	\includegraphics[scale=0.45]{Sync_time_dist.eps}
 	\caption{\label{fig:Sync_time_dist}\footnotesize Distribution of 
-		synchronization time without n-step control (the blue curve) and with n-step 
+		synchronization times without n-step control (the blue curve) and with 
+		n-step 
 		control (the red curve). The control delays synchronization times. }
 \end{figure}
 
 
-Fig  shows the percentage of successful delays \textbf{(S)} (on the y-axis) for a given $n-$step control (on the x-axis) up to $n = 5500$ after which the successful cases are always $100\%$.  We achieve about $50\%$ successful cases for $n = 10$, which rises rapidly to $99\%$ for $n = 2950$. It is to be noted that the average synchronisation time without any control, $\tau_{avg} \sim 10^5$. Therefore, the n-steps required to obtain all successful delays is just about $3\%$ of $\tau_{avg}$. We also plot the distribution of synchronization times for successful cases and compare it against that of corresponding times without control in Fig. The long-tailed distribution of times without delay crosses over to a distribution which shows large flat region before a tail. The flat region indicate large number of successfully applied control with typical delay times of the order of $10^6$. For complexness, we show the decay in the number of undesired cases \textbf{U} in Fig.  The cases \textbf{F} and \textbf{N} which are largely present for $n<10$, are extremely small in number and are neglected. 
+Fig.~\ref{fig:Control_success} shows the percentage of successful delays 
+\textbf{(S)} (on the y-axis) for a given $n-$step control (on the x-axis) up 
+to $n = 5500$ after which the successful cases are always $100\%$.  We achieve 
+about $50\%$ successful cases for $n = 10$, which rises rapidly to $99\%$ for 
+$n = 2950$. It is to be noted that the average synchronization time without 
+any control, $\tau_{avg} \sim 10^5$. Therefore, the n-steps required to obtain 
+all successful delays is just about $3\%$ of $\tau_{avg}$. We also plot the 
+distribution of synchronization times for successful cases and compare it 
+against that of corresponding times without control in 
+Fig~\ref{fig:Sync_time_dist}. The long-tailed 
+distribution of times without delay crosses over to a distribution which shows 
+large flat region before a tail. The flat region indicate large number of 
+successfully applied control with typical delay times of the order of $10^6$. 
+For completeness, we show the decay in the number of undesired cases 
+\textbf{U} in Fig~\ref{fig:Control_success}.  The cases \textbf{F} and 
+\textbf{N} which are largely present for $n<10$, are extremely small in number 
+and are neglected.
 
 
 \begin{figure}[t]
 	\includegraphics[scale=0.45]{Strength_con.eps}
-	\caption{\label{fig:Strength_con} \footnotesize. Variation of $\beta$ 
+	\caption{\label{fig:Strength_con}\footnotesize Variation of $\beta$ 
 		(maximum, minimum and average) which measures the strength of successful 
-		delays i.e. $\beta = \ln(\frac{\tau_d}{\tau_0}$. $\beta_max$ indicates the 
-		maximum delay time obtained at a give n-step control while $\beta_{mean}$ 
-		stands for the mean value around 2. This means that on an average, 
-		synchronization times re delayed by 100 times. The minimum value of $\beta$ 
-		remains 1 for the cases when no delay was obtained obtained. }
+		delays i.e. $\beta = \ln(\frac{\tau_d}{\tau_0}$). $\beta_{max}$ 
+		indicates the maximum delay time obtained at a give n-step control 
+		while $\beta_{mean}$ stands for the mean value around 2. This means 
+		that on an average, synchronization times re delayed by 100 times. The 
+		minimum value of $\beta$ remains 1 for the cases when no delay was 
+		obtained. }
 \end{figure}
 
 
@@ -327,9 +408,26 @@ There are a couple of limitations of the proposed control procedure. The deflect
 
 \section{Advanced Synchronization Times}
 \label{sec:advanced}
-Based on the now explore the possibility to decrease synchronization times i.e. to expedite the process of synchronization. Once again, we will make use of the fact that synchronization traps typically exist in the sticky neighbourhoods of the regular islands.  The procedure is based on the parameter perturbation technique to generate coherent structures in the phase space of an area-preserving map. However, the technique may also be used to push the chaotic bulk on the coherent structure (regular region) already present in the phase space and therefore, to make it disappear completely.  We describe the procedure briefly. 
+Based on the now explore the possibility to decrease synchronization times 
+i.e. to expedite the process of synchronization. Once again, we will make use 
+of the fact that synchronization traps typically exist in the sticky 
+neighborhoods of the regular islands.  The procedure is based on the parameter 
+perturbation technique to generate coherent structures in the phase space of 
+an area-preserving map. However, the technique may also be used to push the 
+chaotic bulk on the coherent structure (regular region) already present in the 
+phase space and therefore, to make it disappear completely.  We describe the 
+procedure briefly. 
 
-In a given area-preserving map, for instance, the  standard map, a  perturbation in the nonlinearity parameter $K$ in the neighbourhood of a suitable chosen periodic point leads to generation of large coherent structure.   We take the same form the standard map with a modulo operation such that $-0.5 \leq P_n \leq 0.5, 0\leq Q_n \leq 1$ . In the form above \cite{FN1}, the standard map is known to have a hyperbolic fixed point at $(0,0)$,$(0,0.5)$. We perturb the parameter $K$ to $K-\epsilon$ if $|P - P_f| < \delta$, $|Q-Q_f| < \delta$. For $P$ and $Q$ outside this $\delta$-strip, $K$ does not change.  It may be noted that the perturbed standard map remains to be area-preserving. The Jacobian $J$ is now given by: 
+In a given area-preserving map, for instance, the  standard map, a  
+perturbation in the nonlinearity parameter $K$ in the neighborhood of a 
+suitable chosen periodic point leads to generation of large coherent 
+structure.   We take the same form the standard map with a modulo operation 
+such that $-0.5 \leq P_n \leq 0.5, 0\leq Q_n \leq 1$ . In this form, the 
+standard map is known to have a hyperbolic fixed point at 
+$(0,0)$,$(0,0.5)$. We perturb the parameter $K$ to $K-\epsilon$ if $|P - P_f| 
+< \delta$, $|Q-Q_f| < \delta$. For $P$ and $Q$ outside this $\delta$-strip, 
+$K$ does not change.  It may be noted that the perturbed standard map remains 
+to be area-preserving. The Jacobian $J$ is now given by: 
 
 \begin{minipage}[t]{0.45\textwidth}
 	%\raggedleft
@@ -344,29 +442,87 @@ In a given area-preserving map, for instance, the  standard map, a  perturbation
 
 \begin{figure*}[t]
 	\includegraphics[scale=0.4]{Fast_sync_location.eps}
-	\caption{\label{fig:location}\footnotesize The phase space of the drive map at K = 6 for a couple of initial conditions where parameter perturbation is applied. Synchronization occurs at the location indicate by the red 'plus' signs.}
+	\caption{\label{fig:location}\footnotesize The phase space of the drive 
+	map at K = 6 for a couple of initial conditions where parameter 
+	perturbation is applied. Synchronization occurs at the location indicate 
+	by the red `plus' signs.}
 \end{figure*}
 
-The determinant of this matrix $J$ remains 1. The phase space thus obtained for for $K = 6$ , $\delta = 0.3$ and $\epsilon = 2$ for the fixed point $(P_f,Q_f)=(0.0,0.0)$ is shown in Fig.~\ref{fig:coherent}.   We have performed computation for the other fixed point and with other modulo operations as well and results do not differ significantly. Our choice here of modulo operation and the fixed point $(P_f,Q_f)$ has some advantage over the others in terms of actual numerical values of synchronization times and the display of locations of the points where synchronization occurs. 
+The determinant of this matrix $J$ remains 1. The phase space thus obtained 
+for for $K = 6$ , $\delta = 0.4$ and $\epsilon = 2$ for the fixed point 
+$(P_f,Q_f)=(0.0,0.0)$ is shown in Fig.~\ref{fig:location}.   We have also 
+performed computation for the other fixed point and with other modulo 
+operations as well and results do not differ significantly. Our choice here of 
+modulo operation and the fixed point $(P_f,Q_f)$ has some advantage over the 
+others in terms of actual numerical values of synchronization times and the 
+display of locations of the points where synchronization occurs. 
 
-For the computations, we take 5 000 initial conditions chosen randomly from the chaotic region of the unperturbed standard map i.e. $P_0 \in \{-0.4,0.4\}$ and $Q_0 \in \{0.3,0.7\}$.   The procedure has been applied to both drive and response map in accordance with our coupling  scheme described above. We choose a patch around $(P_f,Q_f)$  of length $\delta= 0.4$ which corresponds to about $16\%$ of the phase space area. We successfully obtain advance synchronization in more that $99.5\%$ of the cases among which a  couple of instances  has been shown in Fig.~\ref{fig:location} -- synchronization occurs in the neighborhood of the main regular island and one of its satellite islands.  The sign `+' in red indicate the point of synchronization. 
+For the computations, we take 5 000 initial conditions chosen randomly from 
+the chaotic region of the unperturbed standard map i.e. $P_0 \in \{-0.4,0.4\}$ 
+and $Q_0 \in \{0.3,0.7\}$. The total number of iterations used for each 
+initial condition to check for synchronization is $10^7$ and threshold of 
+synchronization is $10^{-5}$ as previously.  The procedure has 
+been applied to both drive and 
+response map in accordance with our coupling  scheme described above. We 
+choose a patch around $(P_f,Q_f)$  of length $\delta= 0.4$ which corresponds 
+to about $16\%$ of the phase space area. We successfully obtain advance 
+synchronization in more that $99.5\%$ of the cases among which a  couple of 
+instances  has been shown in Fig.~\ref{fig:location} -- synchronization occurs 
+in the neighborhood of one of the regular islands and one of their satellite 
+islands.  The sign `+' in red indicate the point of synchronization. For 
+details for the synchronization process, see ~\cite{Mahata2016,Das2017}.
 
-We again define the degree of controlled synchronization as $\beta = \ln \frac{\tau_c}{\tau}$. For advanced synchronization, $\beta < 0$ indicating that synchronization times upon parameter perturbation is smaller than in normal course i.e. $\tau_c < \tau$. The probability distribution of $\beta$ in shown in Fig.~\ref{fig:beta_dist}, which may be fit with a gaussian of the following form:
+We again define the degree of controlled synchronization as $\beta = \ln 
+\frac{\tau_c}{\tau}$. For advanced synchronization, $\beta < 0$ indicating 
+that synchronization times upon parameter perturbation is smaller than in 
+normal course i.e. $\tau_c < \tau$. The normalized probability distribution of 
+$\beta$ in shown in Fig.~\ref{fig:beta_dist}, which may be fit with a Gaussian 
+of the following form:
 \begin{equation}
-f(\beta) =  a\exp\Big(-\frac{(\beta-\mu)^2}{2c^2}\Big)
+f(\beta) =  a\exp\Big(-\frac{(\beta-\mu)^2}{2\sigma^2}\Big)
 \end{equation}
 
-We estimate the mean value $\mu \sim -7.46$ and standard deviation $\sigma \sim1.67$ which corresponds to the fact that, on an average, advanced synchronization times thus obtained are about $10^3$ times smaller than the normal synchronization times with $95.5\%$ values are between $10$ to $10^5$ times smaller.  Therefore, the synchronization times we obtained upon parameter perturbation is significantly smaller than the normal synchronization times.  
+We estimate the mean value $\mu \sim -7.46$ and standard deviation $\sigma 
+\sim1.67$ which corresponds to the fact that, on an average, advanced 
+synchronization times thus obtained are about $10^3$ times smaller than the 
+normal synchronization times with $95.5\%$ values are between $10$ to $10^5$ 
+times smaller.  Therefore, the synchronization times we obtained upon 
+parameter perturbation is significantly smaller than the normal 
+synchronization times.
 
 The parameter perturbation technique is an efficient way to decrease synchronization times with high accuracy.  The value of the perturbation imposed should be chosen suitably as a very small may not have any influence on the synchronization process. The procedure also depends on the size and location of the patch wherein the control is applied. We are yet to see if the other technique of generating coherent structures also influence synchronization in these unidirectionally coupled systems. 
 \begin{figure}[b]
-	\includegraphics[scale=0.45]{sync_time_dist_beta.pdf}
-	\caption{\label{fig:beta_dist}\footnotesize Distribution of degree of synchronization, $P(\beta)$.}
+	%\includegraphics[scale=0.45]{sync_time_dist_beta.pdf}
+    \includegraphics[scale=0.45]{Fast_strength_dist.eps}
+	\caption{\label{fig:beta_dist}\footnotesize Distribution of degree of 
+	ynchronization, $P(\beta)$, mean is -7.46 and standard deviation 1.67.}
 \end{figure}
 
 \section{Conclusions}
 \label{sec:conclusions}
-To summarize, we have developed numerical procedures to control synchronization in two identical standard map coupled under the drive-response configuration. The procedure is based on the fact that synchronization in the system typically occurs in the sticky neighborhoods of the regular islands in the phase space. We have shown that a delay in synchronization can be obtained by kicking the trajectories slightly away from the domain temporarily. The efficiency of the procedure depends upon the number of steps employed in control. By applying the procedure to the system on merely $1\%$ of the phase space area (at $K = 6$), we have successfully increased synchronization times. The maximum number of control steps that are used is $0.01\%$ of the total of number of iterations used throughout the computation.  Furthermore, the procedure gives variety of delays. The limitations of the procedure are, one, the deflection may insert the drive trajectory in the regular islands which would lead to undesirable faster synchronization and two, a predetermined synchronization time in not obtainable. Furthermore, we have demonstrated a simple way to fasten synchronization by the parameter perturbation technique which rapidly drives the chaotic trajectories in the sticky neighborhood of regular islands. The distribution of degree of synchronization times indicates the efficiency of the procedure. A possible future direction is to investigate the role of stickiness in measure synchronization in coupled Hamiltonian systems.
+To summarize, we have developed numerical procedures to control 
+synchronization in two identical standard map coupled under the drive-response 
+configuration. The procedure is based on the fact that synchronization in the 
+system typically occurs in the sticky neighborhoods of the regular islands in 
+the phase space. We have shown that a delay in synchronization can be obtained 
+by kicking the trajectories slightly away from the domain temporarily. The 
+efficiency of the procedure depends upon the number of steps employed in 
+control. By applying the procedure to the system on merely $1\%$ of the phase 
+space area (at $K = 6$), we have successfully increased synchronization times. 
+The maximum number of control steps that are used is $0.01\%$ of the total of 
+number of iterations used throughout the computation.  Furthermore, the 
+procedure gives variety of delays. The limitations of this procedure are, one, 
+the deflection may insert the drive trajectory in the regular islands which 
+would lead to undesirable faster synchronization and two, a predetermined 
+synchronization time in not obtainable. Furthermore, we have demonstrated a 
+simple way to fasten synchronization by the parameter perturbation technique 
+which rapidly drives the chaotic trajectories in the sticky neighborhood of 
+regular islands. The distribution of degree of synchronization times indicates 
+the efficiency of the procedure. In both the numerical procedures, we have 
+ignored the complex hierarchical structures which lead to sticky 
+behavior of the chaotic orbits in the phase space. A possible future direction 
+is to investigate the role of stickiness in measure synchronization in coupled 
+Hamiltonian systems.
 
 \begin{acknowledgments}
 I would like to thank Neelima Gupte and Arnd B\"acker for their suggestions to improve the manuscript. 
