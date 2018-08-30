@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=12pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment 
+%this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\font\myfont=cmr12 at 14pt
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, 
+%the default font and small caps
+\date{}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\date{}
+\author{}
+\title{Chaos detection using SALI and GALI}
+\begin{document}
+    \maketitle
+\section*{Ideas}
+\begin{itemize}
+    \item Can we use these techniques to understand  ``Transient Chaos"?
+    \item  Systems which show Strange nonchaotic attractor (SNA) 
+    and repeller (SNR)--
+    \begin{enumerate}
+        \item A 2d-map (PeiFeu1995) 
+        \begin{align}
+        x_{n+1} &= 2\sigma(\tanh x_n)\cos(2\pi\theta_n)\\
+        \theta_{n+1} &= \theta_n + \omega; mod 1.
+        \end{align}
+        A SNA may be observed only in the case of quasiperiodic forcing.
+        \item A 1D map (Mou2007)
+        \begin{align}
+        f(x) &= x + Ax^\alpha, x < 0.5 \\
+        f(x) &= (1-x) + A(1-x)^\alpha, x \geq 0.5
+        \end{align}
+    \end{enumerate}
+\end{itemize}
+
+\end{document}
