@@ -316,17 +316,26 @@ Our method, however, targets the trajectories themselves in the sticky region
 to delay the process.  It is to be noted that the proposed procedure ignores 
 the details of a rather complex hierarchy of structures around regular 
 islands. We employ the edge-detection algorithm due to Benkadda {\it et al.} 
-\cite{Benkadda1997} to identify the edges of regular islands. For the 
-numerical procedure, we divide the phase space in $100 \times 100$ grid. The 
-edges of both the islands are detected by applying the standard map to point 
-initiated in the chaotic sea, for $10^7$ times.  The edges thus detected in 
-shown in Fig.  We have chosen the thickness parameter to be $d =0.02$ i.e. 
-euclidean distance of $d$ from points on the edge indicate the extent of the 
-vicinity of the island.  This vicinity, therefore, indicate the domain wherein 
-the synchronization traps exist.  To demonstrate this explicitly, we compare 
-the phase angles, defined by $\theta = \tan^{-1}(\frac{Q}{P}$), of the points 
-on 
-the numerically detected edges and the points of synchronization, as follows.
+\cite{Benkadda1997} to identify the edges of regular islands in phase space. 
+For the numerical procedure, we divide the phase space in $100 \times 100$ 
+grid. The edges of both the islands are detected by applying the standard map 
+to point initiated in the chaotic sea, for $10^7$ times.  The edges thus 
+detected in shown in Fig~\ref{fig:edge_reg_island}.  We have chosen the 
+thickness parameter to be $d=0.02$ i.e. euclidean distance of $d$ from points 
+on the edge indicate the extent of the vicinity of the island.  This vicinity, 
+therefore, indicate the domain wherein the synchronization traps exist.  To 
+demonstrate this explicitly, we compare the phase angles, defined by $\theta = 
+\tan^{-1}(\frac{Q}{P}$), of the points on the numerically detected edges and 
+the points of synchronization, as 
+follows.
+
+\begin{figure}[b]
+    \includegraphics[scale=0.42]{edge_reg_island.eps}
+    %\includegraphics[scale=.4]{Standard_Map2.eps}\\
+    \caption{\label{fig:edge_reg_island} \footnotesize Example to detect the 
+    edge of a regular island in the phase space using edge detection 
+    algorithm  due to Benkadda {\it et al.} \cite{Benkadda1997}. }
+\end{figure}
 
 In Fig.~\ref{fig:Edge_Sync_angles}(a), we show the distribution of phase angles of the points on the edges of regular islands determined by the edge-detection algorithm.  The bimodality of the distribution is due to the existence of two sharp islands in otherwise chaotic bulk in the phase space.  We compare this with the phase angles corresponding to the points in the phase space at which synchronization of the chaotic trajectories occurs.
 
@@ -343,7 +352,24 @@ In Fig.~\ref{fig:Edge_Sync_angles}(a), we show the distribution of phase angles 
 
 Fig.~\ref{fig:Edge_Sync_angles}(b) shows the distribution of these phase angles for about 50 000 randomly chosen initial conditions for the drive and response maps that lead to synchronization. The locations of the peaks in the distribution shown in (a) approximately matches with this in (b). It is, therefore, visibly clear that synchronization occurs in the same angular domain of the phase space where the regular islands exist. Our numerically detected edges, thus correctly locate the synchronization traps in the phase space.  We now discuss the control mechanism to delay synchronization time. 
 
-The proximity parameter $d_0 = 0.02$ defines the region in the neighbourhood of the numerically detected edges wherein synchronization traps exist. The basic idea to control synchronization time is to identify the step at which the chaotic trajectory visits the numerically determined sticky neighborhood followed by a slight deflection so that the trajectory restarts at a point outside.  Our procedure depends upon how many times we deflect the trajectory  which will be referred to as step control. This means that if an $n-$step control is  employed then, the trajectory will be kicked away from the domain $n$-times during its first $n$ visits i.e. once per visit. The deflection is achieved by adding a randomly generated fraction below $0.1$ to the point visiting the domain, and therefore the maximum deflection area is roughly $1\%$ of the phase space.  This procedure applied on a given set of initial conditions of the drive and response maps, may result in four possibilities of synchronization time -- (1) successful delay  \textbf{(S)}, (2) no delay \textbf{(N)}, (3) failed to achieve synchronization \textbf{(F)}, and (4) undesirable faster synchronization \textbf{(U)}. Clearly, the only first possibility is the aim of the mechanism; the last one constitute a hazard while the other two are trivial. 
+The proximity parameter $d_0 = 0.02$ defines the region in the neighborhood of 
+the numerically detected edges wherein synchronization traps exist. The basic 
+idea to control synchronization time is to identify the step at which the 
+chaotic trajectory visits the numerically determined sticky neighborhood 
+followed by a slight deflection so that the trajectory restarts at a point 
+outside.  Our procedure depends upon how many times we deflect the trajectory  
+which will be referred to as step control. This means that if an $n-$step 
+control is  employed then, the trajectory will be kicked away from the domain 
+$n$-times during its first $n$ visits i.e. once per visit. The deflection is 
+achieved by adding a randomly generated fraction below $0.1$ to the point 
+visiting the domain, and therefore the maximum deflection area is roughly 
+$1\%$ of the phase space.  This procedure applied on a given set of initial 
+conditions of the drive and response maps, may result in four possibilities of 
+synchronization time -- (1) successful delay  \textbf{(S)}, (2) no delay 
+\textbf{(N)}, (3) failed to achieve synchronization \textbf{(F)}, and (4) 
+undesirable faster synchronization \textbf{(U)}. Clearly, the only first 
+possibility is the aim of the mechanism; the last one constitute a hazard 
+while the other two are trivial. 
 \begin{figure}[h]
 	\includegraphics[scale=0.45]{S_U_Percent}
 	\caption{\label{fig:Control_success}\footnotesize The curves indicate the 
@@ -361,6 +387,18 @@ For the numerical implementation of the mechanism, we have considered $1000$ ran
 		control (the red curve). The control delays synchronization times. }
 \end{figure}
 
+\begin{figure}[b]
+    \includegraphics[scale=0.45]{Strength_con.eps}
+    \caption{\label{fig:Strength_con}\footnotesize Variation of $\beta$ 
+        (maximum, minimum and average) which measures the strength of 
+        successful 
+        delays i.e. $\beta = \ln(\frac{\tau_d}{\tau_0}$). $\beta_{max}$ 
+        indicates the maximum delay time obtained at a give n-step control 
+        while $\beta_{mean}$ stands for the mean value around 2. This means 
+        that on an average, synchronization times re delayed by 100 times. The 
+        minimum value of $\beta$ remains 1 for the cases when no delay was 
+        obtained. }
+\end{figure}
 
 Fig.~\ref{fig:Control_success} shows the percentage of successful delays 
 \textbf{(S)} (on the y-axis) for a given $n-$step control (on the x-axis) up 
@@ -381,25 +419,16 @@ For completeness, we show the decay in the number of undesired cases
 and are neglected.
 
 
-\begin{figure}[t]
-	\includegraphics[scale=0.45]{Strength_con.eps}
-	\caption{\label{fig:Strength_con}\footnotesize Variation of $\beta$ 
-		(maximum, minimum and average) which measures the strength of successful 
-		delays i.e. $\beta = \ln(\frac{\tau_d}{\tau_0}$). $\beta_{max}$ 
-		indicates the maximum delay time obtained at a give n-step control 
-		while $\beta_{mean}$ stands for the mean value around 2. This means 
-		that on an average, synchronization times re delayed by 100 times. The 
-		minimum value of $\beta$ remains 1 for the cases when no delay was 
-		obtained. }
-\end{figure}
-
-
-The degree of delay $\beta$ may be defined as the ratio of synchronization times without numerical control, $\tau_c$ to synchronization times $\tau_0$ without control, i.e. $\beta =  \ln(\frac{\tau_d}{\tau_0}$).  Therefore, for successfully delayed synchronization $\beta>0$ indicating $\tau_c > \tau$. 
-The plot in Fig.~\ref{fig:Strength_con} shows the variation of $\beta$ i.e. 
-$\beta_{min}$, $\beta_{mean}$, and $\beta_{max}$  indicating minimum, mean 
-and maximum $\beta$ for considered $n-$step controls. Clearly, we are able 
-to attain $\beta_{max}$ values to be in the range $5$ to $14$ while mean 
-values remain $\sim2$. Therefore, we are successful in achieving 
+The degree of controlled synchronization $\beta$ may be defined as the ratio 
+of synchronization times without numerical control, $\tau_c$ to 
+synchronization times $\tau_0$ without control, i.e. $\beta =  
+\ln(\frac{\tau_d}{\tau_0}$).  Therefore, for successfully delayed 
+synchronization $\beta>0$ indicating $\tau_c > \tau$.The plot in 
+Fig.~\ref{fig:Strength_con} shows the variation of $\beta$ i.e. $\beta_{min}$, 
+$\beta_{mean}$, and $\beta_{max}$  indicating minimum, mean and maximum 
+$\beta$ for considered $n-$step controls. Clearly, we are able to attain 
+$\beta_{max}$ values to be in the range $5$ to $14$ while mean values remain 
+$\sim2$. Therefore, we are successful in achieving 
 significantly large delays in synchronization times. 
 
 
@@ -418,6 +447,14 @@ chaotic bulk on the coherent structure (regular region) already present in the
 phase space and therefore, to make it disappear completely.  We describe the 
 procedure briefly. 
 
+\begin{figure*}[t]
+    \includegraphics[scale=0.5]{Fast_sync_location.eps}
+    \caption{\label{fig:location}\footnotesize The phase space of the drive 
+        map at K = 6 for a couple of initial conditions where parameter 
+        perturbation is applied. Synchronization occurs at the location 
+        indicate 
+        by the red `plus' signs.}
+\end{figure*}
 In a given area-preserving map, for instance, the  standard map, a  
 perturbation in the nonlinearity parameter $K$ in the neighborhood of a 
 suitable chosen periodic point leads to generation of large coherent 
@@ -437,16 +474,9 @@ to be area-preserving. The Jacobian $J$ is now given by:
 	1 & (K-\epsilon)\cos(2\pi Q_n) \end{array} \right)\] 
 \end{minipage}
 
-\vspace{0.4cm}
-	where, $ \epsilon \neq 0$ if $|P_f - P_n| < \delta$, $|Q_f - Q_n| < \delta$\\ $\epsilon = 0$, otherwise.\\
-
-\begin{figure*}[t]
-	\includegraphics[scale=0.4]{Fast_sync_location.eps}
-	\caption{\label{fig:location}\footnotesize The phase space of the drive 
-	map at K = 6 for a couple of initial conditions where parameter 
-	perturbation is applied. Synchronization occurs at the location indicate 
-	by the red `plus' signs.}
-\end{figure*}
+\vspace{0.2cm}
+	where, $ \epsilon \neq 0$ if $|P_f - P_n| < \delta$, $|Q_f - Q_n| < 
+	\delta$\\ $\epsilon = 0$, otherwise.\\
 
 The determinant of this matrix $J$ remains 1. The phase space thus obtained 
 for for $K = 6$ , $\delta = 0.4$ and $\epsilon = 2$ for the fixed point 
@@ -466,14 +496,19 @@ been applied to both drive and
 response map in accordance with our coupling  scheme described above. We 
 choose a patch around $(P_f,Q_f)$  of length $\delta= 0.4$ which corresponds 
 to about $16\%$ of the phase space area. We successfully obtain advance 
-synchronization in more that $99.5\%$ of the cases among which a  couple of 
+synchronization in more than $99.5\%$ of the cases among which a  couple of 
 instances  has been shown in Fig.~\ref{fig:location} -- synchronization occurs 
 in the neighborhood of one of the regular islands and one of their satellite 
 islands.  The sign `+' in red indicate the point of synchronization. For 
 details for the synchronization process, see ~\cite{Mahata2016,Das2017}.
-
+\begin{figure}[h]
+    \includegraphics[scale=0.8]{sync_time_beta.eps}
+    \caption{\label{fig:beta_dist}\footnotesize Distribution of degree of 
+        controlled synchronization, $P(\beta)$, mean is -7.46 and standard 
+        deviation is 1.67.}
+\end{figure}
 We again define the degree of controlled synchronization as $\beta = \ln 
-\frac{\tau_c}{\tau}$. For advanced synchronization, $\beta < 0$ indicating 
+(\frac{\tau_c}{\tau}$). For advanced synchronization, $\beta < 0$ indicating 
 that synchronization times upon parameter perturbation is smaller than in 
 normal course i.e. $\tau_c < \tau$. The normalized probability distribution of 
 $\beta$ in shown in Fig.~\ref{fig:beta_dist}, which may be fit with a Gaussian 
@@ -491,12 +526,7 @@ parameter perturbation is significantly smaller than the normal
 synchronization times.
 
 The parameter perturbation technique is an efficient way to decrease synchronization times with high accuracy.  The value of the perturbation imposed should be chosen suitably as a very small may not have any influence on the synchronization process. The procedure also depends on the size and location of the patch wherein the control is applied. We are yet to see if the other technique of generating coherent structures also influence synchronization in these unidirectionally coupled systems. 
-\begin{figure}[b]
-	%\includegraphics[scale=0.45]{sync_time_dist_beta.pdf}
-    \includegraphics[scale=0.45]{Fast_strength_dist.eps}
-	\caption{\label{fig:beta_dist}\footnotesize Distribution of degree of 
-	ynchronization, $P(\beta)$, mean is -7.46 and standard deviation 1.67.}
-\end{figure}
+
 
 \section{Conclusions}
 \label{sec:conclusions}
@@ -517,12 +547,12 @@ would lead to undesirable faster synchronization and two, a predetermined
 synchronization time in not obtainable. Furthermore, we have demonstrated a 
 simple way to fasten synchronization by the parameter perturbation technique 
 which rapidly drives the chaotic trajectories in the sticky neighborhood of 
-regular islands. The distribution of degree of synchronization times indicates 
-the efficiency of the procedure. In both the numerical procedures, we have 
-ignored the complex hierarchical structures which lead to sticky 
-behavior of the chaotic orbits in the phase space. A possible future direction 
-is to investigate the role of stickiness in measure synchronization in coupled 
-Hamiltonian systems.
+regular islands. The distribution of degree of controlled synchronization 
+times indicates the efficiency of the procedure. In both the numerical 
+procedures, we have ignored the complex hierarchical structures which lead to 
+sticky behavior of the chaotic orbits in the phase space. A possible future 
+direction is to investigate the role of stickiness in measure synchronization 
+in coupled Hamiltonian systems.
 
 \begin{acknowledgments}
 I would like to thank Neelima Gupte and Arnd B\"acker for their suggestions to improve the manuscript. 
