@@ -193,7 +193,7 @@ particle dynamics in accelerator, comet dynamics in solar systems
 etc.~\cite{Chirikov1960,Izraelev1980,Chirikov1989,Chirikov2008}
 Two-dimensional  phase space plots  of the standard map for the parameter 
 value $K = 6$ using $25$ initial conditions  are shown in 
-Figs.~\ref{fig:Standard_map}.
+Fig.~\ref{fig:Standard_map}.
 
 
 We now synchronize two standard maps, using the Pecora-Carroll scheme of synchronization using drive-response coupling \cite{Pecora1990,Pecora2015}. 
@@ -249,16 +249,16 @@ conditions $(P^\textnormal{d}_0,Q^\textnormal{d}_0,Q^\textnormal{r}_0) =
 	\caption{\label{fig:sync_ex} \footnotesize The variation of $\Delta Q = Q^d_n-Q^r_n$ of the coupled system at $K = 6$ with iterations $n$. Synchronization is considered to be achieved when $\Delta Q < 10^{-5}$ and remain so for the rest of the iterations. The iteration step $n$ at which synchronization occurs is called synchronization time $\tau$. For this case, $\tau = 570 246.$ }
 \end{figure}
 
-We now analyze synchronization of the coupled system using the master stability function~\cite{Pecora1998}. The numerical procedures to control synchronization times will be discussed thereafter.  
+We now analyze synchronization of the coupled system using the master stability function~\cite{Pecora1998}. Numerical procedures to control synchronization times will be discussed thereafter.  
 
 \section{Locating Synchronization Traps using Master stability function}
 \label{Master stability function}
 A general drive-response system coupled unidirectionally may be described by the following set of equations
 
 \begin{align}
-\frac{d\overbar{X}_d}{dt} & = \overbar{F}(\overbar{X}_d) \nonumber  \\
-\frac{d\overbar{X_r}}{dt} &= \overbar{F}(\overbar{X}_r) + \alpha 
-E(\overbar{X}_d-\overbar{X}_r).
+\frac{d\overbar{X}_\textnormal{d}}{dt} & = \overbar{F}(\overbar{X}_\textnormal{d}) \nonumber  \\
+\frac{d\overbar{X_\textnormal{r}}}{dt} &= \overbar{F}(\overbar{X}_\textnormal{r}) + \alpha 
+E(\overbar{X}_\textnormal{d}-\overbar{X}_\textnormal{r}).
 \end{align}
 
 \noindent Here $\overbar{X}_d$ and $\overbar{X}_r$ are drive and response 
@@ -267,16 +267,16 @@ $\overbar{X}$ used in the difference and $\alpha$ is the coupling strength.
 For the map case, we have the following form
 
 \begin{align}
-\overbar{X}^d_{n+1} &= \overbar{F}(\overbar{X}^d_{n}) \nonumber  \\
-\overbar{X}^r_{n+1} &= \overbar{F}(\overbar{X}^r_{n}) + \alpha 
-E(\overbar{X}^d_{n}-\overbar{X}^r_n).
+\overbar{X}^\textnormal{d}_{n+1} &= \overbar{F}(\overbar{X}^\textnormal{d}_{n}) \nonumber  \\
+\overbar{X}^\textnormal{r}_{n+1} &= \overbar{F}(\overbar{X}^\textnormal{r}_{n}) + \alpha 
+E(\overbar{X}^\textnormal{d}_{n}-\overbar{X}^\textnormal{r}_n).
 \end{align}
 
 Therefore, in the case of a general unidirectional coupling of two standard maps, we get
 \begin{align}
-P^d_{n+1} &= P^d_n + \frac{K}{2\pi}\sin(2\pi Q^d_n) \nonumber\\
-Q^d_{n+1} &= P^d_{n+1} + Q^d_n \nonumber\\
-P^r_{n+1} &= P^r_n + \frac{K}{2\pi}\sin (2\pi Q^r_n) + \alpha(P^d_n-P^r_n) \nonumber \\
+P^\textnormal{d}_{n+1} &= P^\textnormal{d}_n + \frac{K}{2\pi}\sin(2\pi Q^\textnormal{d}_n) \nonumber\\
+Q^\textnormal{d}_{n+1} &= P^\textnormal{d}_{n+1} + Q^\textnormal{d}_n \nonumber\\
+P^\textnormal{r}_{n+1} &= P^\textnormal{r}_n + \frac{K}{2\pi}\sin (2\pi Q^\textnormal{r}_n) + \alpha(P^\textnormal{d}_n-P^\textnormal{r}_n) \nonumber \\
 Q^r_{n+1} &= P^r_{n+1} + Q^r_n.
 \label{equ:coupled}
 \end{align}
@@ -290,10 +290,10 @@ P^\textnormal{r}$ and $Q^\perp = Q^\textnormal{d} -Q^\textnormal{r}$, as
 follows
 \begin{eqnarray}
 \label{equ:trans}
-P^\perp_{n+1} &= (1-\alpha)P^\perp_n+ \frac{K}{2\pi} \sin(2\pi Q^d_n) - 
-\frac{K}{2\pi} \sin(2\pi Q^r_n) \nonumber \\ 
+P^\perp_{n+1} &= (1-\alpha)P^\perp_n+ \frac{K}{2\pi} \sin(2\pi Q^\textnormal{d}_n) - 
+\frac{K}{2\pi} \sin(2\pi Q^\textnormal{r}_n) \nonumber \\ 
 Q^\perp_{n+1} &= (1-\alpha)P^\perp_n+ Q^\perp_n + \frac{K}{2\pi} \sin(2\pi 
-Q^d_n) \nonumber \\ &- \frac{K}{2\pi} \sin(2\pi Q^r_n).
+Q^\textnormal{d}_n) \nonumber \\ &- \frac{K}{2\pi} \sin(2\pi Q^\textnormal{r}_n).
 \end{eqnarray}
 
 We now write the variational equation for Eq.(\ref{equ:trans}) by linearizing 
@@ -307,7 +307,7 @@ P^\perp_{n} \\ \delta Q^\perp_{n} \end{array} \right],
 where the matrix $\mathcal{M}(\alpha)$ is given by
 \begin{equation} 
 \label{equ:M}
-\mathcal{M}(\alpha) = \begin{bmatrix} 1-\alpha & K\cos(2\pi Q^d_n) \\ 1 - 
+\mathcal{M}(\alpha) = \begin{bmatrix} 1-\alpha & K\cos(2\pi Q^\textnormal{d}_n) \\ 1 - 
 \alpha & 1 + K\cos(2\pi Q^d_n) \end{bmatrix}.
 \end{equation}
 
@@ -326,7 +326,7 @@ Here $n$ is a positive integer and $JM^n(\overbar{X}_i)$ denotes the Jacobian ma
 Now, for the Pecora-Carroll approach, we set $\alpha = 1$. This substitution simplifies the matrix in Eq.(\ref{equ:M}) which now reads
 
 \begin{equation} 
-\mathcal{M}(1)= \begin{bmatrix} 0 & K\cos(2\pi Q^d_n) \\ 0 & 1 + K\cos(2\pi 
+\mathcal{M}(1)= \begin{bmatrix} 0 & K\cos(2\pi Q^\textnormal{d}_n) \\ 0 & 1 + K\cos(2\pi 
 Q^d_n) \end{bmatrix},
 \end{equation}
 
@@ -335,7 +335,7 @@ The MSF should then be computed from the eigenvalues of the matrix $\mathcal{M}(
 \begin{equation}
 \label{equ:LE}
 \lambda   = \lim_{n \rightarrow \infty} 
-\frac{1}{n}\sum^{n-1}_{i=0}\ln|1+K\cos(2\pi Q^d_n)|.
+\frac{1}{n}\sum^{n-1}_{i=0}\ln|1+K\cos(2\pi Q^\textnormal{d}_n)|.
 \end{equation}
 
 In general, we define the $kth$ time-$n$ Lyapunov exponent associated with an initial point $\overbar{X}_0 = (P_0,Q_0)$ for a map $M(P,Q)$ as
