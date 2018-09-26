@@ -63,7 +63,8 @@
 
 
 
-\title{Mechanism to control synchronization in coupled area-preserving maps}
+\title{Controlling synchronization in coupled area-preserving maps by 
+stickiness}
 
 \author{Swetamber Das}
 \affiliation{Max-Planck-Institut f\"ur Physik komplexer Systeme, N\"othnitzer
@@ -72,16 +73,17 @@
 \date{\today}
 
 \begin{abstract}
- A unidirectionally coupled area-preserving maps with mixed phase space may 
+Unidirectionally coupled area-preserving maps with a mixed phase space may 
 show identical synchronization in the sticky neighborhood of the regular 
-islands. We use this fact to devise a couple of numerical procedures to 
-delay and expedite the process of synchronization in standard maps coupled 
-under  Pecora-Caroll coupling scheme. The delay method is based on controlled 
+islands. We use this fact to devise numerical procedures to 
+delay and expedite the process of synchronization in two standard maps coupled 
+under  the Pecora-Caroll coupling scheme. The delay method is based on 
+controlled 
 kicking of trajectories away from synchronization traps for as long as 
-necessary. On the other hand, the method to expiate the process is
+necessary. The method to expiate the process is
 achieved by a parameter perturbation technique which rapidly drives the 
 chaotic trajectories to synchronization traps in the sticky neighborhoods 
-of regular islands. We also point out of the limitations of these methods.
+of regular islands. We also discuss the limitations of these methods.
 \end{abstract}
 
 \pacs{PACS here}
@@ -89,54 +91,62 @@ of regular islands. We also point out of the limitations of these methods.
 \maketitle
 
 \section{Introduction} 
-Low-dimensional Hamiltonian systems commonly exhibit mixed phase space i.e. 
-regular structures and chaotic regions may co-exist at a given degree of 
+A low-dimensional Hamiltonian system commonly exhibits a mixed phase space 
+i.e. regular structures and chaotic regions may co-exist at a given degree of 
 nonlinearity. This mixed nature has interesting consequences for the transport
 properties of such systems, for instance, the existence of anomalous kinetics,
 L\'{e}vy processes and L\'{e}vy flights \cite{Klafter1994,Zaburdaev2015}, 
 power law contributions to recurrence and other statistics, and the existence 
 of dynamical traps \cite{Zaslavsky2002a,Zaslavsky2002b}. An interesting region 
 of a mixed phase space is the interface between regular regions and chaotic 
-sea \cite{Mackay1984, Easton1993}. The dynamics in these neighbourhoods are 
-complex but fairly well understood \cite{Meiss2015} for lower dimensional 
+sea \cite{Mackay1984, Easton1993}. The dynamics in these neighborhoods are 
+complex but fairly well understood \cite{Meiss2015} for low dimensional 
 systems. The complexity arises from the fact that a chaotic trajectory spends 
 an arbitrary long but finite time at the boundaries of regular islands before 
 exiting to the chaotic sea. The intermittent tendency of chaotic trajectories 
-to stay close to the regular boundaries is called the phenomenon of 
-stickiness. A major consequence of the stickiness is  the existence of power 
-law in the Poincar{\'e} recurrence times indicating algebraic decay for long 
+to stay close to the regular boundaries is called stickiness. A major 
+consequence of the stickiness is  the existence of power law in the 
+Poincar{\'e} recurrence times indicating algebraic decay for long 
 times times rather than exponential decay expected for normal transport. 
 Therefore, due to stickiness, even a small regular island can influence the 
 global transport properties of the system and decay of correlations. The 
 phenomenon has been of great interest and continues to be studied on 
 theoretical level \cite{Altmann2006, Altmann2010,Livorati2012,Bunimovich2012, 
-Kruger2015}. In addition, stickiness has found application in several problems 
-such as particle advection in fluids \cite{Babiano1994,Tel2005}, transport in 
+Kruger2015, Lange2016}. In addition, stickiness has found application in 
+several problems such as particle advection in fluids 
+\cite{Babiano1994,Tel2005}, transport in 
 plasma fusion devices \cite{Szezech2012,Martins2014}, celestial mechanics 
 \cite{Efthymiopoulos1999, Harsoula2010, Harsoula2016}.
 
-A recent feature of stickiness has emerged from a connected quarter. In our 
-recent work~\cite{Mahata2016}, we have looked at the effects of the mixed 
-phase space on the synchronization in a system of two standard maps coupled in 
+A surprising feature of stickiness has emerged in our earlier 
+work~\cite{Mahata2016}, we have looked at the effects of the mixed phase space 
+on the synchronization in a system of two standard maps coupled in 
 unidirectional drive-response configuration. We have shown that 
 synchronization of chaotic trajectories of the drive and response maps 
 typically occurs in the neighborhood of regular inlands as a consequence of 
 stickiness in the region.  This is the first instance, as far as we are aware, 
 where stickiness have been found to influence synchronization in coupled 
-chaotic systems.  For a chaotic orbit, synchronization typically happens via 
-an intermittent behavior in the phase difference of the drive and response 
-maps.   The sticky neighborhoods of a regular islands contain dynamical traps 
-in chaotic orbits. In such trapping regions in the phase space, parts of a 
-chaotic trajectory are almost regular in time and allow for synchronization to 
-occur. Such traps are characterized using the properties of the finite-time 
-Lyapunov exponent \cite{Szezech2005}. In the context of our work, we will 
-refer to these traps as synchronization traps. We further noted that the 
-behavior of the synchronization traps can be analyzed in a more quantitative 
-way by analyzing the location and stability properties of the periodic orbits 
-in the vicinity of the locations where synchronization takes place.
+chaotic systems. It is important to point out that the role of stickiness in 
+Hamiltonian systems for synchronization was already predicted by 
+Zaslavsky~\cite{Zaslavsky2002b} early in the last decade.  For a chaotic 
+orbit, synchronization typically happens via an intermittent behavior in the 
+phase difference of the drive and response maps.   The sticky neighborhoods of 
+a regular islands {\it temporarily} traps chaotic orbits. In such trapping 
+regions in the phase space, parts of a  chaotic trajectory are almost regular 
+in time and allow for synchronization to occur. Such traps are characterized 
+using the properties of the finite-time Lyapunov exponent \cite{Szezech2005}. 
+In the context of our work, we will refer to these traps as synchronization 
+traps. We further note that the behavior of the synchronization traps can be 
+analyzed in a more quantitative way by analyzing the location and stability 
+properties of the periodic orbits in the vicinity of the locations where 
+synchronization takes place.
 
 Synchronization in coupled chaotic systems, coupled map lattices and networks 
-have been studied in great details over the years. Coupled Hamiltonian systems are also known to show synchronization such as measure synchronization~\cite{Hampton1999,Wang2003,Vincent2005,Gupta2017} and identical synchronization~\cite{Mahata2016,Das2017} The fact however remains 
+have been studied in details (for reviews, see 
+\cite{Pecora1998,Boccaletti2002, Pecora2015}). 
+Coupled Hamiltonian systems are also known to show synchronization such as 
+measure synchronization~\cite{Hampton1999,Wang2003,Vincent2005,Gupta2017} and 
+identical synchronization~\cite{Mahata2016,Das2017} The fact however remains 
 that the ability to control synchronization based on the dynamics of the 
 process has not been given much attention, until 
 recently~\cite{Grabow2011,Wang2016}. In realistic systems, the speed of 
@@ -148,34 +158,44 @@ mechanisms to control synchronization process to wit,  to increase and to
 decrease synchronization times based on the location of synchronization traps 
 in the sticky neighborhood of regular islands in the phase space of the 
 area-preserving system of the standard map. We demonstrate the mechanism at $K 
-= 6$ where only two small regular islands exist. It is important to point out 
-that the role of stickiness in Hamiltonian systems for synchronization was 
-already predicted by Zaslavsky~\cite{Zaslavsky2002b} early in the last decade.
+= 6$ where only two small regular islands exist. 
 
-The rest of the paper is 
-organized in the following way: we explain the coupling scheme in 
-sec.~\ref{sec:Pecora_Carroll} and the mechanism based on the location of 
-synchronization traps is given in sec.~\ref{Master stability function}. The 
-numerical procedures to delay and advanced synchronization times are 
-demonstrated in sec.~\ref{sec:delay} and sec.~\ref{sec:advanced} respectively, 
-and the paper ends with conclusions in sec.~\ref{sec:conclusions} including 
-discussion on limitations and implications. 
+The rest of the paper is organized in the following way: we explain the 
+coupling scheme in sec.~\ref{sec:Pecora_Carroll} and the mechanism based on 
+the location of synchronization traps is given in sec.~\ref{Master stability 
+function}. The numerical procedures to delay and advance synchronization 
+times are demonstrated in Sec.~\ref{sec:delay} and Sec.~\ref{sec:advanced} 
+respectively, and the paper ends with conclusions in 
+Sec.~\ref{sec:conclusions} including discussion on limitations and 
+implications.
 
+\begin{figure}[b]
+    \includegraphics[scale=.45]{Standard_Map}
+    \caption{\label{fig:Standard_map} \footnotesize The phase space of the 
+    standard map for  random initial conditions from the uniform distribution 
+    on $[0,1]$,  at the parameter value K = 6.0.}
+\end{figure}
 
 \section{The Pecora Caroll's unidirectional coupling scheme}
 \label{sec:Pecora_Carroll} 
 The standard map is considered to be the prototypical example of a two-dimensional area-preserving map, and is given by:
 
-\begin{empheq}[right=\empheqrbrace \mod 1]{align}
+\begin{empheq}[right=\empheqrbrace \mod 1 .]{align}
 P_{n+1} = P_n +  \frac{K}{2\pi}\sin(2\pi Q_n) \nonumber\\
 Q_{n+1} = P_{n+1} + Q_n 
 \end{empheq}
 
-\begin{figure}[b]
-	\includegraphics[scale=.45]{Standard_Map}
-	\caption{\label{fig:Standard_map} \footnotesize The phase space of the standard map for  random initial conditions from the uniform distribution on $[0,1]$,  at the parameter value K = 6.0.}
-\end{figure}
-Here the subscript $n$ denotes the discrete time and $K$ is the nonlinearity parameter. These equations typically describe the evolution of two canonical variables $P$ and $Q$ which correspond to the momentum and co-ordinate in the Poincar\'{e} section of a freely moving rotator with interleaved periodic kicks. This system represents the behavior of a variety of systems such as charged particle confinement in  mirror magnetic traps, particle dynamics in accelerator, comet dynamics in solar systems etc.  Two-dimensional  phase space plots  of the standard map for the parameter value $K = 6$ using $25$ initial conditions  are shown in Figs.~\ref{fig:Standard_map}.
+\noindent Here the subscript $n$ denotes the discrete time and $K$ is the 
+nonlinearity parameter. These equations typically describe the evolution of 
+two canonical variables $P$ and $Q$ which correspond to the momentum and 
+co-ordinate in the Poincar\'{e} section of a freely moving rotator with 
+interleaved periodic kicks. This system represents the behavior of a variety 
+of systems such as charged particle confinement in  mirror magnetic traps, 
+particle dynamics in accelerator, comet dynamics in solar systems 
+etc.~\cite{Chirikov1960,Izraelev1980,Chirikov1989,Chirikov2008}
+Two-dimensional  phase space plots  of the standard map for the parameter 
+value $K = 6$ using $25$ initial conditions  are shown in 
+Figs.~\ref{fig:Standard_map}.
 
 
 We now synchronize two standard maps, using the Pecora-Carroll scheme of synchronization using drive-response coupling \cite{Pecora1990,Pecora2015}. 
@@ -184,25 +204,32 @@ This system was first devised to synchronize the chaotic trajectories dissipativ
 \begin{minipage}[t]{0.5\textwidth}
 	\begin{empheq}[right=\empheqrbrace \mod 1]{align}\nonumber
 	\label{equ:drive}
-	P^d_{n+1} = P^d_n + \frac{K}{2\pi}\sin(2\pi Q^d_n)\nonumber\\
-	Q^d_{n+1} = P^d_{n+1} + Q^d_n \nonumber
+	P^\textnormal{d}_{n+1} = P^\textnormal{d}_n + \frac{K}{2\pi}\sin(2\pi 
+	Q^\textnormal{d}_n)\nonumber\\
+	Q^\textnormal{d}_{n+1} = P^\textnormal{d}_{n+1} + Q^\textnormal{d}_n 
+	\nonumber
 	\end{empheq}
 	\centering \textbf{(Drive)}
 	
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 	\begin{empheq}[right=\empheqrbrace \mod 1]{align}
-	P^r_{n+1} = P^d_n + \frac{K}{2\pi}\sin(2\pi Q^r_n) \nonumber \\
-	Q^r_{n+1} = P^r_{n+1} + Q^r_n \nonumber
+	P^\textnormal{r}_{n+1} = P^\textnormal{d}_n + \frac{K}{2\pi}\sin(2\pi 
+	Q^\textnormal{r}_n) \nonumber \\
+	Q^\textnormal{r}_{n+1} = P^\textnormal{r}_{n+1} + Q^\textnormal{r}_n 
+	\nonumber
 	\end{empheq}
 	\centering \textbf{(Response)}
 \end{minipage}
 
 \vspace{.5cm}
 
-The initial values of $Q$ in the drive and response maps are chosen arbitrarily, whereas the $P$ values are identical. The system is said to reach complete synchronization when both the $Q$ values of the drive and response systems evolve asymptotically to identical values i.e. 
+The initial values of $Q$ in the drive and response maps are chosen 
+arbitrarily, whereas the $P$ values are identical. The system is said to reach 
+complete synchronization when both the $Q$ values of the drive and response 
+systems evolve identically i.e. 
 \begin{equation}
-\lim_{t\rightarrow\infty}(Q^d_n - Q^r_n) = 0
+\lim_{t\rightarrow\infty}(Q^\textnormal{d}_n - Q^\textnormal{r}_n) = 0
 \end{equation}
 
 Synchronization time is the least value of the iterate say, $\tau$, where $\Delta Q = Q^d-Q^r$ vanishes and remains so for rest of the iterations. 
@@ -210,7 +237,14 @@ Synchronization time is the least value of the iterate say, $\tau$, where $\Delt
 (Q^d_n - Q^r_n) = 0; \hfill  n \geq  \bf {\tau }
 \end{equation}
 
-In all of the computations reported in the work, two chaotic trajectories are considered to be synchronized to numerical accuracy, if the Euclidean distance between them is less than $10^{-5}$. An example is shown in Fig.~\ref{fig:sync_ex}. Here, we plot $\Delta Q = Q^d_n-Q^r_n$ for initial conditions $(P^d_0,Q^d_0,Q^r_0) = (0.569, 0.906,0.106)$ at $K = 6$. The synchronization time is found to be 570246. 
+In all of the computations reported in the work, two chaotic trajectories are 
+considered to be synchronized to numerical accuracy, if the Euclidean distance 
+between them is less than $10^{-5}$. An example is shown in 
+Fig.~\ref{fig:sync_ex}. Here, we plot $\Delta Q = 
+Q^\textnormal{d}_n-Q^\textnormal{r}_n$ for initial 
+conditions $(P^\textnormal{d}_0,Q^\textnormal{d}_0,Q^\textnormal{r}_0) = 
+(0.569, 0.906,0.106)$ at $K = 6$. The synchronization time is found to be 5,70,
+246. 
 
 \begin{figure}[t]
 	\includegraphics[scale=.4]{Sync_exmaple}
@@ -224,15 +258,20 @@ We now analyze synchronization of the coupled system using the master stability 
 A general drive-response system coupled unidirectionally may be described by the following set of equations
 
 \begin{align}
-\frac{d\overbar{X}_d}{dt} = \overbar{F}(\overbar{X}_d) \nonumber  &&
-\frac{d\overbar{X_r}}{dt} = \overbar{F}(\overbar{X}_r) + \alpha E(\overbar{X}_d-\overbar{X}_r)
+\frac{d\overbar{X}_d}{dt} & = \overbar{F}(\overbar{X}_d) \nonumber  \\
+\frac{d\overbar{X_r}}{dt} &= \overbar{F}(\overbar{X}_r) + \alpha 
+E(\overbar{X}_d-\overbar{X}_r).
 \end{align}
 
-Here $\overbar{X}_d$ and $\overbar{X}_r$ are drive and response variables; the matrix $E$ determines the linear combination of the $\overbar{X}$ used in the difference and $\alpha$ is the coupling strength. For the map case, we have the following form
+\noindent Here $\overbar{X}_d$ and $\overbar{X}_r$ are drive and response 
+variables; the matrix $E$ determines the linear combination of the 
+$\overbar{X}$ used in the difference and $\alpha$ is the coupling strength. 
+For the map case, we have the following form
 
 \begin{align}
-\overbar{X}^d_{n+1} = \overbar{F}(\overbar{X}^d_{n}) \nonumber  &&
-\overbar{X}^r_{n+1} = \overbar{F}(\overbar{X}^r_{n}) + \alpha E(\overbar{X}^d_{n}-\overbar{X}^r_n)
+\overbar{X}^d_{n+1} &= \overbar{F}(\overbar{X}^d_{n}) \nonumber  \\
+\overbar{X}^r_{n+1} &= \overbar{F}(\overbar{X}^r_{n}) + \alpha 
+E(\overbar{X}^d_{n}-\overbar{X}^r_n).
 \end{align}
 
 Therefore, in the case of a general unidirectional coupling of two standard maps, we get
@@ -240,55 +279,72 @@ Therefore, in the case of a general unidirectional coupling of two standard maps
 P^d_{n+1} &= P^d_n + \frac{K}{2\pi}\sin(2\pi Q^d_n) \nonumber\\
 Q^d_{n+1} &= P^d_{n+1} + Q^d_n \nonumber\\
 P^r_{n+1} &= P^r_n + \frac{K}{2\pi}\sin (2\pi Q^r_n) + \alpha(P^d_n-P^r_n) \nonumber \\
-Q^r_{n+1} &= P^r_{n+1} + Q^r_n 
+Q^r_{n+1} &= P^r_{n+1} + Q^r_n.
 \label{equ:coupled}
 \end{align}
 
 
 We have chosen $E$ to be the matrix $\begin{bmatrix} 1 & 0 \\ 1 & 0 \end{bmatrix}$. 
 
-To find the stability of the synchronous state, we first express  Eq.(\ref{equ:coupled}) in terms of  $P^\perp = P^d - P^r$ and $Q^\perp = Q^d - Q^r$, as follows
+To find the stability of the synchronous state, we first express  
+Eq.(\ref{equ:coupled}) in terms of  $P^\perp = P^\textnormal{d} - 
+P^\textnormal{r}$ and $Q^\perp = Q^\textnormal{d} -Q^\textnormal{r}$, as 
+follows
 \begin{eqnarray}
 \label{equ:trans}
-P^\perp_{n+1} = (1-\alpha)P^\perp_n+ \frac{K}{2\pi} \sin(2\pi Q^d_n) - \frac{K}{2\pi} \sin(2\pi Q^r_n) \\ \nonumber
-Q^\perp_{n+1} = (1-\alpha)P^\perp_n+ Q^\perp_n + \frac{K}{2\pi} \sin(2\pi Q^d_n) - \frac{K}{2\pi} \sin(2\pi Q^r_n)  
+P^\perp_{n+1} &= (1-\alpha)P^\perp_n+ \frac{K}{2\pi} \sin(2\pi Q^d_n) - 
+\frac{K}{2\pi} \sin(2\pi Q^r_n) \nonumber \\ 
+Q^\perp_{n+1} &= (1-\alpha)P^\perp_n+ Q^\perp_n + \frac{K}{2\pi} \sin(2\pi 
+Q^d_n) \nonumber \\ &- \frac{K}{2\pi} \sin(2\pi Q^r_n).
 \end{eqnarray}
 
-We now write the variational equation for Eq.(\ref{equ:trans}) by linearizing about $(P^d_n,Q^d_n)$
+We now write the variational equation for Eq.(\ref{equ:trans}) by linearizing 
+about $(P^\textnormal{d}_n,Q^\textnormal{d}_n)$
 \begin{equation}
 \label{equ:variational}
-\left[ \begin{array}{c} \delta P^\perp_{n+1} \\ \delta Q^\perp_{n+1} \end{array} \right] = \mathcal{M}(\alpha)\left[ \begin{array}{c}\delta P^\perp_{n} \\ \delta Q^\perp_{n} \end{array} \right]
+\left[ \begin{array}{c} \delta P^\perp_{n+1} \\ \delta Q^\perp_{n+1} 
+\end{array} \right] = \mathcal{M}(\alpha)\left[ \begin{array}{c}\delta 
+P^\perp_{n} \\ \delta Q^\perp_{n} \end{array} \right],
 \end{equation}
 where the matrix $\mathcal{M}(\alpha)$ is given by
 \begin{equation} 
 \label{equ:M}
-\mathcal{M}(\alpha) = \begin{bmatrix} 1-\alpha & K\cos(2\pi Q^d_n) \\ 1 - \alpha & 1 + K\cos(2\pi Q^d_n) \end{bmatrix} 
+\mathcal{M}(\alpha) = \begin{bmatrix} 1-\alpha & K\cos(2\pi Q^d_n) \\ 1 - 
+\alpha & 1 + K\cos(2\pi Q^d_n) \end{bmatrix}.
 \end{equation}
 
-This is the master stability equation for the unidirectionally coupled standard map. The variational equation (\ref{equ:variational}) is the master stability equation for the coupled system under investigation. The associated largest LE computed from the master stability equation is the master stability function of the system, given by:
+This is the master stability equation for the unidirectionally coupled 
+standard map. The variational equation (\ref{equ:variational}) is the master 
+stability equation for the coupled system under investigation. The associated 
+largest Lyapunov exponent computed from the master stability equation is the 
+master stability function of the system, given by:
 \begin{equation}
 \label{equ:msf}
-\lambda  = \lim_{n \rightarrow \infty} \lim_{\delta\overbar{X}_0\rightarrow 0}\frac{1}{n}\sum^{n-1}_{i=0}\ln|JM^n(\overbar{X}_i)|
+\lambda  = \lim_{n \rightarrow \infty} \lim_{\delta\overbar{X}_0\rightarrow 
+0}\frac{1}{n}\sum^{n-1}_{i=0}\ln|JM^n(\overbar{X}_i)|.
 \end{equation}
 
 Here $n$ is a positive integer and $JM^n(\overbar{X}_i)$ denotes the Jacobian matrix of the $n$-times iterated map.  A negative value of the MSF (the largest non-zero LE) will ensure that $(P^\perp,Q^\perp) $ tend to zero indicating that the difference between $P$ and $Q$ will die out and the system will synchronize. 
 Now, for the Pecora-Carroll approach, we set $\alpha = 1$. This substitution simplifies the matrix in Eq.(\ref{equ:M}) which now reads
 
 \begin{equation} 
-\mathcal{M}(1)= \begin{bmatrix} 0 & K\cos(2\pi Q^d_n) \\ 0 & 1 + K\cos(2\pi Q^d_n) \end{bmatrix} 
+\mathcal{M}(1)= \begin{bmatrix} 0 & K\cos(2\pi Q^d_n) \\ 0 & 1 + K\cos(2\pi 
+Q^d_n) \end{bmatrix},
 \end{equation}
 
 The MSF should then be computed from the eigenvalues of the matrix $\mathcal{M}(1)$. It is easy to see that, for $\alpha =1$, one of the eigenvalues of   $\mathcal{M}(1)$ is zero. Therefore, we need to consider only the non-zero eigenvalue which is $1+K\cos(2\pi Q^d_n)$. The corresponding LE is given by
 
 \begin{equation}
 \label{equ:LE}
-\lambda   = \lim_{n \rightarrow \infty} \frac{1}{n}\sum^{n-1}_{i=0}\ln|1+K\cos(2\pi Q^d_n)|
+\lambda   = \lim_{n \rightarrow \infty} 
+\frac{1}{n}\sum^{n-1}_{i=0}\ln|1+K\cos(2\pi Q^d_n)|.
 \end{equation}
 
 In general, we define the $kth$ time-$n$ Lyapunov exponent associated with an initial point $\overbar{X}_0 = (P_0,Q_0)$ for a map $M(P,Q)$ as
 \begin{equation}
 \label{equ:FLEf}
-\lambda _k(\overbar{X}_0;n)  = \frac{1}{n}\sum^{n-1}_{i=0}\ln|JM^n(\overbar{X}_i)|
+\lambda _k(\overbar{X}_0;n)  = 
+\frac{1}{n}\sum^{n-1}_{i=0}\ln|JM^n(\overbar{X}_i)|.
 \end{equation}
 
 \begin{figure*}[t!]
@@ -299,12 +355,26 @@ In general, we define the $kth$ time-$n$ Lyapunov exponent associated with an in
 Here $n$ is a positive integer and $JM^n(\overbar{X}_i)$ denotes the Jacobian matrix of the $n$-times iterated map. We extend this notion to the master stability function defined in the Sec.~\ref{Master stability function}  i.e.  the non-zero Lyapunov exponent defined in Eq.(\ref{equ:LE}) 
 which takes the following finite time version 
 \begin{equation}
-\lambda_1^s(\overbar{X}_0;n) = \frac{1}{n}\sum^{n-1}_{i=0}\ln|1 + K \cos (2\pi Q_i)|
+\lambda_1^s(\overbar{X}_0;n) = \frac{1}{n}\sum^{n-1}_{i=0}\ln|1 + K \cos (2\pi 
+Q_i)|.
 \end{equation}
 
-The subscript ($k = 1$) has been dropped hereafter as we have only one LE to compute.
+The subscript ($k = 1$) has been dropped hereafter as we have only one 
+exponent to compute.
 
-We plot the variation in the time-5 FTLE defined above at $K = 6$. At the point of synchronization, the FTLE values attain a set of negative values consistently in a small window, indicating the existence of a synchronization trap.  In Fig.~\ref{fig:FTLE} , the three plots show the fluctuations  of FTLE near the point of synchronization for three different sets of initial conditions - $(P^d_0,Q^d_0,Q^r_0) = (0.466,0.098,0.141)$ in (a),  $(0.009,0.026,0.129)$ in (b), and $(0.553,0.554,0.396)$ in (c) with synchronization times 287090, 234521, and 164782 respectively. The values on the x-axis indicate time steps at which averages are computed so that synchronization times and the temporal neighborhood are effectively captured in the plots wherein a temporary drop is clearly visible, indicated by ellipses in red. Synchronization of chaotic trajectories typically occurs in one of such traps. 
+We plot the variation in the time-5 FTLE defined above at $K = 6$. At the 
+point of synchronization, the FTLE values attain a set of smaller values 
+consistently in a small window, indicating the existence of a synchronization 
+trap.  In Fig.~\ref{fig:FTLE} , the three plots show the fluctuations  of FTLE 
+near the point of synchronization for three different sets of initial 
+conditions - $(P^d_0,Q^d_0,Q^r_0) = (0.466,0.098,0.141)$ in (a),  
+$(0.009,0.026,0.129)$ in (b), and $(0.553,0.554,0.396)$ in (c) with 
+synchronization times 287090, 234521, and 164782 respectively. The values on 
+the x-axis indicate time steps at which averages are computed so that 
+synchronization times and the temporal neighborhood are effectively captured 
+in the plots wherein a temporary drop is clearly visible, indicated by 
+ellipses in red. Synchronization of chaotic trajectories typically occurs in 
+one of such traps. 
 
 \section{Delayed Synchronization Times}
 \label{sec:delay}
@@ -318,14 +388,14 @@ the details of a rather complex hierarchy of structures around regular
 islands. We employ the edge-detection algorithm due to Benkadda {\it et al.} 
 \cite{Benkadda1997} to identify the edges of regular islands in phase space. 
 For the numerical procedure, we divide the phase space in $100 \times 100$ 
-grid. The edges of both the islands are detected by applying the standard map 
+grid. The edges of both islands are detected by applying the standard map 
 to point initiated in the chaotic sea, for $10^7$ times.  The edges thus 
 detected in shown in Fig~\ref{fig:edge_reg_island}.  We have chosen the 
-thickness parameter to be $d=0.02$ i.e. euclidean distance of $d$ from points 
+proximity parameter $d=0.02$ i.e. Euclidean distance from points 
 on the edge indicate the extent of the vicinity of the island.  This vicinity, 
 therefore, indicate the domain wherein the synchronization traps exist.  To 
 demonstrate this explicitly, we compare the phase angles, defined by $\theta = 
-\tan^{-1}(\frac{Q}{P}$), of the points on the numerically detected edges and 
+\tan^{-1}(\frac{Q}{P}$), of the points on numerically detected edges and 
 the points of synchronization, as 
 follows.
 
@@ -371,16 +441,23 @@ undesirable faster synchronization \textbf{(U)}. Clearly, the only first
 possibility is the aim of the mechanism; the last one constitute a hazard 
 while the other two are trivial. 
 \begin{figure}[h]
-	\includegraphics[scale=0.45]{S_U_Percent}
+	\includegraphics[scale=0.42]{S_U_Percent}
 	\caption{\label{fig:Control_success}\footnotesize The curves indicate the 
 		percentages of (S) successful delays shown as the blue curve, and (U) 
 		undesirable fast synchronization shown as the red curve. }
 \end{figure}
 
-For the numerical implementation of the mechanism, we have considered $1000$ randomly chosen initial conditions from the chaotic sea of the phase space at $K = 6$. The maps have been iterated for $10^7$ times in each case.  The sticky domain is the determined by the proximity parameter $d_0$ around the numerically detected edges of the regular islands. We demonstrate the effectiveness of the control procedure  with respect to several $n-$step controls. The computations have been performed for $n \in \mathbb{A}$, where $\mathbb{A} = \{10, 20,30,...,90, 100, 150, ... ,10 000\}$.  
+For the numerical implementation of the mechanism, we have considered $1000$ 
+randomly chosen initial conditions from the chaotic sea of the phase space at 
+$K = 6$. The maps have been iterated for $10^7$ times in each case.  The 
+sticky domain is the determined by the proximity parameter $d_0$ around the 
+numerically detected edges of the regular islands. We demonstrate the 
+effectiveness of the control procedure  with respect to several $n-$step 
+controls. The computations have been performed for $n \in \mathbb{A}$, where 
+$\mathbb{A} = \{10, 20,30,...,90, 100, 150,200, ... ,10 000\}$.  
 
 \begin{figure}[t]
-	\includegraphics[scale=0.45]{Sync_time_dist.eps}
+	\includegraphics[scale=0.42]{Sync_time_dist.eps}
 	\caption{\label{fig:Sync_time_dist}\footnotesize Distribution of 
 		synchronization times without n-step control (the blue curve) and with 
 		n-step 
@@ -388,7 +465,7 @@ For the numerical implementation of the mechanism, we have considered $1000$ ran
 \end{figure}
 
 \begin{figure}[b]
-    \includegraphics[scale=0.45]{Strength_con.eps}
+    \includegraphics[scale=0.42]{Strength_con.eps}
     \caption{\label{fig:Strength_con}\footnotesize Variation of $\beta$ 
         (maximum, minimum and average) which measures the strength of 
         successful 
@@ -437,22 +514,23 @@ There are a couple of limitations of the proposed control procedure. The deflect
 
 \section{Advanced Synchronization Times}
 \label{sec:advanced}
-Based on the now explore the possibility to decrease synchronization times 
+We now explore the possibility to decrease synchronization times 
 i.e. to expedite the process of synchronization. Once again, we will make use 
 of the fact that synchronization traps typically exist in the sticky 
 neighborhoods of the regular islands.  The procedure is based on the parameter 
 perturbation technique to generate coherent structures in the phase space of 
-an area-preserving map. However, the technique may also be used to push the 
+an area-preserving map~\cite{Gupte2007}. However, the technique may also be 
+used to push the 
 chaotic bulk on the coherent structure (regular region) already present in the 
 phase space and therefore, to make it disappear completely.  We describe the 
 procedure briefly. 
 
 \begin{figure*}[t]
-    \includegraphics[scale=0.5]{Fast_sync_location.eps}
+    \includegraphics[scale=0.45]{Fast_sync_location.eps}
     \caption{\label{fig:location}\footnotesize The phase space of the drive 
         map at K = 6 for a couple of initial conditions where parameter 
         perturbation is applied. Synchronization occurs at the location 
-        indicate 
+        indicated
         by the red `plus' signs.}
 \end{figure*}
 In a given area-preserving map, for instance, the  standard map, a  
@@ -460,9 +538,11 @@ perturbation in the nonlinearity parameter $K$ in the neighborhood of a
 suitable chosen periodic point leads to generation of large coherent 
 structure.   We take the same form the standard map with a modulo operation 
 such that $-0.5 \leq P_n \leq 0.5, 0\leq Q_n \leq 1$ . In this form, the 
-standard map is known to have a hyperbolic fixed point at 
-$(0,0)$,$(0,0.5)$. We perturb the parameter $K$ to $K-\epsilon$ if $|P - P_f| 
-< \delta$, $|Q-Q_f| < \delta$. For $P$ and $Q$ outside this $\delta$-strip, 
+standard map has a hyperbolic fixed point at 
+$(P_\textnormal{f},Q_\textnormal{f}) = (0,0)$,$(0,0.5)$. We perturb the 
+parameter $K$ to $K-\epsilon$ if $|P - P_\textnormal{f}| 
+< \delta$, $|Q-Q_\textnormal{f}| < \delta$. For $P$ and $Q$ outside this 
+$\delta$-strip, 
 $K$ does not change.  It may be noted that the perturbed standard map remains 
 to be area-preserving. The Jacobian $J$ is now given by: 
 
@@ -471,7 +551,7 @@ to be area-preserving. The Jacobian $J$ is now given by:
 	\centering
 	\[ J = \left( \begin{array}{cc}
 	1 & 1 + (K-\epsilon)\cos(2\pi Q_n)   \\
-	1 & (K-\epsilon)\cos(2\pi Q_n) \end{array} \right)\] 
+	1 & (K-\epsilon)\cos(2\pi Q_n) \end{array} \right)\]
 \end{minipage}
 
 \vspace{0.2cm}
@@ -480,10 +560,12 @@ to be area-preserving. The Jacobian $J$ is now given by:
 
 The determinant of this matrix $J$ remains 1. The phase space thus obtained 
 for for $K = 6$ , $\delta = 0.4$ and $\epsilon = 2$ for the fixed point 
-$(P_f,Q_f)=(0.0,0.0)$ is shown in Fig.~\ref{fig:location}.   We have also 
+$(P_\textnormal{f},Q_\textnormal{f})=(0.0,0.0)$ is shown in 
+Fig.~\ref{fig:location}.   We have also 
 performed computation for the other fixed point and with other modulo 
 operations as well and results do not differ significantly. Our choice here of 
-modulo operation and the fixed point $(P_f,Q_f)$ has some advantage over the 
+modulo operation and the fixed point $(P_\textnormal{f},Q_\textnormal{f})$ has 
+some advantage over the 
 others in terms of actual numerical values of synchronization times and the 
 display of locations of the points where synchronization occurs. 
 
@@ -494,7 +576,8 @@ initial condition to check for synchronization is $10^7$ and threshold of
 synchronization is $10^{-5}$ as previously.  The procedure has 
 been applied to both drive and 
 response map in accordance with our coupling  scheme described above. We 
-choose a patch around $(P_f,Q_f)$  of length $\delta= 0.4$ which corresponds 
+choose a patch around $(P_\textnormal{f},Q_\textnormal{f})$  of length 
+$\delta= 0.4$ which corresponds 
 to about $16\%$ of the phase space area. We successfully obtain advance 
 synchronization in more than $99.5\%$ of the cases among which a  couple of 
 instances  has been shown in Fig.~\ref{fig:location} -- synchronization occurs 
@@ -502,10 +585,10 @@ in the neighborhood of one of the regular islands and one of their satellite
 islands.  The sign `+' in red indicate the point of synchronization. For 
 details for the synchronization process, see ~\cite{Mahata2016,Das2017}.
 \begin{figure}[h]
-    \includegraphics[scale=0.8]{sync_time_beta.eps}
+    \includegraphics[scale=0.7]{sync_time_beta.eps}
     \caption{\label{fig:beta_dist}\footnotesize Distribution of degree of 
-        controlled synchronization, $P(\beta)$, mean is -7.46 and standard 
-        deviation is 1.67.}
+        controlled synchronization, $P(\beta)$, mean is $-7.46$ and standard 
+        deviation is $1.67$.}
 \end{figure}
 We again define the degree of controlled synchronization as $\beta = \ln 
 (\frac{\tau_c}{\tau}$). For advanced synchronization, $\beta < 0$ indicating 
@@ -514,7 +597,8 @@ normal course i.e. $\tau_c < \tau$. The normalized probability distribution of
 $\beta$ in shown in Fig.~\ref{fig:beta_dist}, which may be fit with a Gaussian 
 of the following form:
 \begin{equation}
-f(\beta) =  a\exp\Big(-\frac{(\beta-\mu)^2}{2\sigma^2}\Big)
+f(\beta) =  
+\frac{1}{\sqrt{2\pi\sigma^2}}\exp\Big(-\frac{(\beta-\mu)^2}{2\sigma^2}\Big).
 \end{equation}
 
 We estimate the mean value $\mu \sim -7.46$ and standard deviation $\sigma 
@@ -531,8 +615,9 @@ The parameter perturbation technique is an efficient way to decrease synchroniza
 \section{Conclusions}
 \label{sec:conclusions}
 To summarize, we have developed numerical procedures to control 
-synchronization in two identical standard map coupled under the drive-response 
-configuration. The procedure is based on the fact that synchronization in the 
+synchronization in two identical standard maps coupled under the 
+drive-response configuration. The procedure is based on the fact that 
+synchronization in the 
 system typically occurs in the sticky neighborhoods of the regular islands in 
 the phase space. We have shown that a delay in synchronization can be obtained 
 by kicking the trajectories slightly away from the domain temporarily. The 
@@ -568,12 +653,12 @@ I would like to thank Neelima Gupte and Arnd B\"acker for their suggestions to i
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\bibliographystyle{cpg_unsrt_title}
+\bibliographystyle{cpg_unsrt_title}
 %\bibliographystyle{cpg_unsrt_key_title}
 %\bibliographystyle{cpg_unsrt_title2}
 %\bibliographystyle{cpg_unsrt_key_title2}
 %\bibliographystyle{unsrt}
-\bibliographystyle{cpg_unsrt_title_for_phys_rev}
+%\bibliographystyle{cpg_unsrt_title_for_phys_rev}
 %\bibliographystyle{cpg_unsrt_key_title2} % to have labels + links
 
 
