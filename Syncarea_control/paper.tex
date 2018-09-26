@@ -7,7 +7,7 @@
 %   (especially, if the notation might be changed later...)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[reprint,superscriptaddress,amsmath,amssymb,aps,pre]{revtex4-1}
+\documentclass[reprint,amsmath,amssymb,aps,pre]{revtex4-1}
 
 \usepackage{graphicx}% Include figure files
 \graphicspath{plots}
@@ -107,7 +107,7 @@ exiting to the chaotic sea. The intermittent tendency of chaotic trajectories
 to stay close to the regular boundaries is called stickiness. A major 
 consequence of the stickiness is  the existence of power law in the 
 Poincar{\'e} recurrence times indicating algebraic decay for long 
-times times rather than exponential decay expected for normal transport. 
+times rather than exponential decay expected for normal transport. 
 Therefore, due to stickiness, even a small regular island can influence the 
 global transport properties of the system and decay of correlations. The 
 phenomenon has been of great interest and continues to be studied on 
@@ -146,9 +146,7 @@ have been studied in details (for reviews, see
 \cite{Pecora1998,Boccaletti2002, Pecora2015}). 
 Coupled Hamiltonian systems are also known to show synchronization such as 
 measure synchronization~\cite{Hampton1999,Wang2003,Vincent2005,Gupta2017} and 
-identical synchronization~\cite{Mahata2016,Das2017} The fact however remains 
-that the ability to control synchronization based on the dynamics of the 
-process has not been given much attention, until 
+identical synchronization~\cite{Mahata2016,Das2017} However, the ability to control synchronization based on the dynamics of the process has not been given much attention, until 
 recently~\cite{Grabow2011,Wang2016}. In realistic systems, the speed of 
 synchronization may be significant. For example, in
 neurosciences,  the speed of the visual and olfactory processing are 
@@ -390,7 +388,7 @@ islands. We employ the edge-detection algorithm due to Benkadda {\it et al.}
 For the numerical procedure, we divide the phase space in $100 \times 100$ 
 grid. The edges of both islands are detected by applying the standard map 
 to point initiated in the chaotic sea, for $10^7$ times.  The edges thus 
-detected in shown in Fig~\ref{fig:edge_reg_island}.  We have chosen the 
+detected is shown in Fig~\ref{fig:edge_reg_island}.  We have chosen the 
 proximity parameter $d=0.02$ i.e. Euclidean distance from points 
 on the edge indicate the extent of the vicinity of the island.  This vicinity, 
 therefore, indicate the domain wherein the synchronization traps exist.  To 
@@ -420,7 +418,7 @@ In Fig.~\ref{fig:Edge_Sync_angles}(a), we show the distribution of phase angles 
 		synchronization occurs. }
 \end{figure}
 
-Fig.~\ref{fig:Edge_Sync_angles}(b) shows the distribution of these phase angles for about 50 000 randomly chosen initial conditions for the drive and response maps that lead to synchronization. The locations of the peaks in the distribution shown in (a) approximately matches with this in (b). It is, therefore, visibly clear that synchronization occurs in the same angular domain of the phase space where the regular islands exist. Our numerically detected edges, thus correctly locate the synchronization traps in the phase space.  We now discuss the control mechanism to delay synchronization time. 
+Fig.~\ref{fig:Edge_Sync_angles}(b) shows the distribution of these phase angles for about 50 000 randomly chosen initial conditions for the drive and response maps that lead to synchronization. The locations of the peaks in the distribution shown in ~\ref{fig:Edge_Sync_angles}(a) approximately matches with this in ~\ref{fig:Edge_Sync_angles}(b). It is, therefore, visibly clear that synchronization occurs in the same angular domain of the phase space where the regular islands exist. Our numerically detected edges, thus correctly locate the synchronization traps in the phase space.  We now discuss the control mechanism to delay synchronization time. 
 
 The proximity parameter $d_0 = 0.02$ defines the region in the neighborhood of 
 the numerically detected edges wherein synchronization traps exist. The basic 
@@ -447,10 +445,10 @@ while the other two are trivial.
 		undesirable fast synchronization shown as the red curve. }
 \end{figure}
 
-For the numerical implementation of the mechanism, we have considered $1000$ 
+For numerical implementation of the mechanism, we have considered $1000$ 
 randomly chosen initial conditions from the chaotic sea of the phase space at 
 $K = 6$. The maps have been iterated for $10^7$ times in each case.  The 
-sticky domain is the determined by the proximity parameter $d_0$ around the 
+sticky domain is determined by the proximity parameter $d_0$ around the 
 numerically detected edges of the regular islands. We demonstrate the 
 effectiveness of the control procedure  with respect to several $n-$step 
 controls. The computations have been performed for $n \in \mathbb{A}$, where 
@@ -500,9 +498,9 @@ The degree of controlled synchronization $\beta$ may be defined as the ratio
 of synchronization times without numerical control, $\tau_c$ to 
 synchronization times $\tau_0$ without control, i.e. $\beta =  
 \ln(\frac{\tau_d}{\tau_0}$).  Therefore, for successfully delayed 
-synchronization $\beta>0$ indicating $\tau_c > \tau$.The plot in 
+synchronization $\beta>0$ indicating $\tau_c > \tau$. The plot in 
 Fig.~\ref{fig:Strength_con} shows the variation of $\beta$ i.e. $\beta_{min}$, 
-$\beta_{mean}$, and $\beta_{max}$  indicating minimum, mean and maximum 
+$\beta_{mean}$, and $\beta_{max}$  indicating minimum, mean, and maximum 
 $\beta$ for considered $n-$step controls. Clearly, we are able to attain 
 $\beta_{max}$ values to be in the range $5$ to $14$ while mean values remain 
 $\sim2$. Therefore, we are successful in achieving 
@@ -617,8 +615,7 @@ The parameter perturbation technique is an efficient way to decrease synchroniza
 To summarize, we have developed numerical procedures to control 
 synchronization in two identical standard maps coupled under the 
 drive-response configuration. The procedure is based on the fact that 
-synchronization in the 
-system typically occurs in the sticky neighborhoods of the regular islands in 
+synchronization in the system typically occurs in the sticky neighborhoods of the regular islands in 
 the phase space. We have shown that a delay in synchronization can be obtained 
 by kicking the trajectories slightly away from the domain temporarily. The 
 efficiency of the procedure depends upon the number of steps employed in 
@@ -626,9 +623,9 @@ control. By applying the procedure to the system on merely $1\%$ of the phase
 space area (at $K = 6$), we have successfully increased synchronization times. 
 The maximum number of control steps that are used is $0.01\%$ of the total of 
 number of iterations used throughout the computation.  Furthermore, the 
-procedure gives variety of delays. The limitations of this procedure are, one, 
+procedure gives variety of delays. The limitations of this procedure are -- (a) 
 the deflection may insert the drive trajectory in the regular islands which 
-would lead to undesirable faster synchronization and two, a predetermined 
+would lead to undesirable faster synchronization, and (b) a predetermined 
 synchronization time in not obtainable. Furthermore, we have demonstrated a 
 simple way to fasten synchronization by the parameter perturbation technique 
 which rapidly drives the chaotic trajectories in the sticky neighborhood of 
