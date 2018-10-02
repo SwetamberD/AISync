@@ -63,7 +63,7 @@
 
 
 
-\title{Mechanism to controlling synchronization in coupled area-preserving maps}
+\title{Mechanism to control synchronization in coupled area-preserving maps}
 
 \author{Swetamber Das}
 \affiliation{Max-Planck-Institut f\"ur Physik komplexer Systeme, N\"othnitzer
@@ -120,9 +120,9 @@ synchronization of chaotic trajectories of the drive and response maps
 typically occurs in the neighborhood of regular inlands as a consequence of 
 stickiness in the region.  This is the first instance, as far as we are aware, 
 where stickiness have been found to influence synchronization in coupled 
-chaotic systems. It is important to point out that the role of stickiness in 
+chaotic systems. It is important to point out that a possible role of stickiness in 
 Hamiltonian systems for synchronization was already predicted by 
-Zaslavsky~\cite{Zaslavsky2002b} early in the last decade.  For a chaotic 
+Zaslavsky~\cite{Zaslavsky2002b} in beginning of the last decade.  For a chaotic 
 orbit, synchronization typically happens via an intermittent behavior in the 
 phase difference of the drive and response maps.   The sticky neighborhoods of 
 a regular islands {\it temporarily} traps chaotic orbits. In such trapping 
@@ -168,7 +168,6 @@ implications.
 \section{The Pecora Carroll's unidirectional coupling scheme}
 \label{sec:Pecora_Carroll} 
 The standard map is considered to be the prototypical example of a two-dimensional area-preserving map, and is given by:
-
 \begin{empheq}[right=\empheqrbrace \mod 1 .]{align}
 P_{n+1} = P_n +  \frac{K}{2\pi}\sin(2\pi Q_n) \nonumber\\
 Q_{n+1} = P_{n+1} + Q_n 
@@ -202,9 +201,9 @@ systems evolve identically i.e.
 \lim_{t\rightarrow\infty}(Q^\textnormal{d}_n - Q^\textnormal{r}_n) = 0.
 \end{equation}
 
-Synchronization time is the least value of the iterate say, $\tau$, where $\Delta Q = Q^d-Q^r$ vanishes and remains so for rest of the iterations. 
+Synchronization time is the least value of the iterate say, $\tau$, where $\Delta Q = Q^d-Q^r$ vanishes for all subsequent iterations: 
 \begin{equation}
-(Q^d_n - Q^r_n) = 0; \hfill  n \geq  \bf {\tau }
+(Q^\textnormal{d}_n - Q^\textnormal{r}_n) = 0; \hfill  n \geq  \bf {\tau }
 \end{equation}
 
 In all of the computations reported in the work, two chaotic trajectories are considered to be synchronized to numerical accuracy, if the Euclidean distance between them is less than $10^{-5}$. An example is shown in 
@@ -212,7 +211,7 @@ Fig.~\ref{fig:sync_ex}. Here, we plot $\Delta Q = Q^\textnormal{d}_n-Q^\textnorm
 conditions $(P^\textnormal{d}_0,Q^\textnormal{d}_0,Q^\textnormal{r}_0) = 
 (0.569, 0.906,0.106)$ at $K = 6$. The synchronization time is found to be 5,70,246. 
 
-\begin{figure}[t]
+\begin{figure}[b]
 	\includegraphics[scale=.4]{Sync_exmaple}
 	\caption{\label{fig:sync_ex} \footnotesize The variation of $\Delta Q = Q^d_n-Q^r_n$ of the coupled system at $K = 6$ with iterations $n$. Synchronization is considered to be achieved when $\Delta Q < 10^{-5}$ and remain so for the rest of the iterations. The iteration step $n$ at which synchronization occurs is called synchronization time $\tau$. For this case, $\tau = 570 246.$ }
 \end{figure}
@@ -221,7 +220,7 @@ We now analyze synchronization of the coupled system using the master stability 
 
 \section{Locating Synchronization Traps using Master stability function}
 \label{Master stability function}
-A general drive-response system coupled unidirectionally may be described by the following set of equations
+A general drive-response system coupled unidirectionally may be described by the following set of equations:
 
 \begin{align}
 \frac{d\overbar{X}_\textnormal{d}}{dt} & = \overbar{F}(\overbar{X}_\textnormal{d}) \nonumber  \\
@@ -358,7 +357,7 @@ the points of synchronization, as
 follows.
 
 \begin{figure}[b]
-    \includegraphics[scale=0.48]{edge_reg_island.eps}
+    \includegraphics[scale=0.45]{edge_reg_island.eps}
     %\includegraphics[scale=.4]{Standard_Map2.eps}\\
     \caption{\label{fig:edge_reg_island} \footnotesize Example to detect the 
     edge of a regular island in the phase space using edge detection 
@@ -512,8 +511,9 @@ to be area-preserving. The Jacobian $J$ is now given by:
 	1 & (K-\epsilon)\cos(2\pi Q_n) \end{array} \right),\]
 \end{minipage}
 
-\vspace{0.2cm}
-	where, $ \epsilon \neq 0$ if $|P_f - P_n| < \delta$, $|Q_f - Q_n| < 
+\vspace*{.2cm}
+
+\noindent where, $ \epsilon \neq 0$ if $|P_f - P_n| < \delta$, $|Q_f - Q_n| < 
 	\delta$\\ $\epsilon = 0$, otherwise.\\
 
 The determinant of this matrix $J$ remains 1. The phase space thus obtained 
@@ -543,7 +543,7 @@ in the neighborhood of one of the regular islands and one of their satellite
 islands.  The sign `+' in red indicate the point of synchronization. For 
 details for the synchronization process, see ~\cite{Mahata2016,Das2017}.
 \begin{figure}[h]
-    \includegraphics[scale=0.7]{sync_time_beta.eps}
+    \includegraphics[scale=0.8]{sync_time_beta.eps}
     \caption{\label{fig:beta_dist}\footnotesize Distribution of degree of 
         controlled synchronization, $P(\beta)$, mean is $-7.46$ and standard 
         deviation is $1.67$.}
@@ -583,7 +583,9 @@ control. By applying the procedure to the system on almost $16\%$ of the phase
 space area (at $K = 6$), we have successfully increased synchronization times. 
 The maximum number of control steps that are used is $0.01\%$ of the total of 
 number of iterations used throughout the computation.  Furthermore, the 
-procedure gives variety of delays. The limitations of this procedure are -- (a) the deflection may insert the drive trajectory in the regular islands which would lead to undesirable faster synchronization, and (b) a predetermined synchronization time in not obtainable. Furthermore, we have demonstrated a simple way to fasten synchronization by the parameter perturbation technique which rapidly drives the chaotic trajectories in the sticky neighborhood of regular islands. The distribution of degree of controlled synchronization times indicates the efficiency of the procedure. In both the numerical procedures, we have ignored the complex hierarchical structures which lead to sticky behavior of the chaotic orbits in the phase space. A possible future direction is to investigate the role of stickiness in ``measure synchronization" in coupled Hamiltonian systems.
+procedure gives variety of delays. The limitations of this procedure are -- (a) the deflection may insert the drive trajectory in the regular islands which would lead to undesirable faster synchronization, and (b) a predetermined synchronization time in not obtainable. Furthermore, we have demonstrated a simple way to fasten synchronization by the parameter perturbation technique which rapidly drives the chaotic trajectories in the sticky neighborhood of regular islands. The distribution of degree of controlled synchronization times indicates the efficiency of the procedure. In both the numerical procedures, we have ignored the complex hierarchical structures which lead to sticky behavior of the chaotic orbits in the phase space. A possible future direction is to investigate the role of stickiness in measure synchronization in coupled Hamiltonian systems.
+
+\vspace*{0.3cm}
 
 \begin{acknowledgments}
 I would like to thank Neelima Gupte and Arnd B\"acker for their suggestions to improve the manuscript. 
